@@ -1,0 +1,2932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cy.its.trafficSituation.mybatis.clients.DeviceSysMapper">
+  <resultMap id="BaseResultMap" type="cy.its.trafficSituation.domain.models.DeviceSys">
+    <id column="DEVICE_ID" jdbcType="VARCHAR" property="deviceId" />
+    <result column="DEVICE_SYS_MODEL_ID" jdbcType="VARCHAR" property="deviceSysModelId" />
+    <result column="CONTRACT_ID" jdbcType="VARCHAR" property="contractId" />
+    <result column="DEVICE_SYS_NBR" jdbcType="VARCHAR" property="deviceSysNbr" />
+    <result column="DEVICE_NAME" jdbcType="VARCHAR" property="deviceName" />
+    <result column="ORG_ID" jdbcType="VARCHAR" property="orgId" />
+    <result column="DEVICE_TYPE" jdbcType="VARCHAR" property="deviceType" />
+    <result column="DEVICE_BRAND" jdbcType="VARCHAR" property="deviceBrand" />
+    <result column="MANUFACTURE_SN" jdbcType="VARCHAR" property="manufactureSn" />
+    <result column="SOFTWARE_VERSION" jdbcType="VARCHAR" property="softwareVersion" />
+    <result column="NETWORK_TYPE" jdbcType="CHAR" property="networkType" />
+    <result column="SAFE_CONNECT_MEANS" jdbcType="CHAR" property="safeConnectMeans" />
+    <result column="DEVICE_IP" jdbcType="VARCHAR" property="deviceIp" />
+    <result column="DEVICE_PORT" jdbcType="DECIMAL" property="devicePort" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="SIM_NBR" jdbcType="VARCHAR" property="simNbr" />
+    <result column="INSTALL_DATE" jdbcType="TIMESTAMP" property="installDate" />
+    <result column="INSTALL_BY" jdbcType="VARCHAR" property="installBy" />
+    <result column="MOUNTING_FACILITY_TYPE" jdbcType="CHAR" property="mountingFacilityType" />
+    <result column="ENABLE_UPDATE_DATE" jdbcType="TIMESTAMP" property="enableUpdateDate" />
+    <result column="USE_STATUS_FLAG" jdbcType="CHAR" property="useStatusFlag" />
+    <result column="LONGITUDE" jdbcType="DECIMAL" property="longitude" />
+    <result column="LATITUDE" jdbcType="DECIMAL" property="latitude" />
+    <result column="STATUS_TYPE" jdbcType="VARCHAR" property="statusType" />
+    <result column="STATUS_UPDATE_TIME" jdbcType="TIMESTAMP" property="statusUpdateTime" />
+    <result column="SYNC_STATUS" jdbcType="CHAR" property="syncStatus" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="POWER_TYPE" jdbcType="CHAR" property="powerType" />
+    <result column="TRANSMISSION_MODE" jdbcType="CHAR" property="transmissionMode" />
+    <result column="BANDWIDTH" jdbcType="VARCHAR" property="bandwidth" />
+    <result column="OWNERSHIP" jdbcType="CHAR" property="ownership" />
+    <result column="SITE_ID" jdbcType="VARCHAR" property="siteId" />
+    <result column="SECTION_ID_LIST" jdbcType="VARCHAR" property="sectionIdList" />
+    <result column="COLLECTION_TYPE" jdbcType="CHAR" property="collectionType" />
+    <result column="ORG_PRIVILEGE_CODE" jdbcType="VARCHAR" property="orgPrivilegeCode" />
+    <result column="CONTRACTOR_ID" jdbcType="VARCHAR" property="contractorId" />
+    <result column="ARCHITECTURE" jdbcType="CHAR" property="architecture" />
+    <result column="SERVER_PLAT_ID" jdbcType="VARCHAR" property="serverPlatId" />
+    <result column="VERIFICATION_MARK" jdbcType="VARCHAR" property="verificationMark" />
+    <result column="LINE_STATISTICS_MARK" jdbcType="VARCHAR" property="lineStatisticsMark" />
+    <result column="DEVICE_KEY" jdbcType="VARCHAR" property="deviceKey" />
+    <result column="DEVICE_STOP_END_TIME" jdbcType="TIMESTAMP" property="deviceStopEndTime" />
+    <result column="SYNC_MARKUP" jdbcType="CHAR" property="syncMarkup" />
+    <result column="INFO_CHECK" jdbcType="VARCHAR" property="infoCheck" />
+    <result column="INFO_CHECK_DESC" jdbcType="VARCHAR" property="infoCheckDesc" />
+    <result column="NET_CONTRACTOR" jdbcType="CHAR" property="netContractor" />
+    <result column="ITMS2_CAMERA_ID" jdbcType="VARCHAR" property="itms2CameraId" />
+    <result column="ITMS2_DEVICE_ID" jdbcType="VARCHAR" property="itms2DeviceId" />
+    <result column="POWER_OFF_NETWORK" jdbcType="CHAR" property="powerOffNetwork" />
+    <result column="ITMS2_CAMERA_SN" jdbcType="VARCHAR" property="itms2CameraSn" />
+    <result column="TO_TABLE" jdbcType="VARCHAR" property="toTable" />
+    <result column="ITMS2_ISGUN" jdbcType="VARCHAR" property="itms2Isgun" />
+    <result column="POSITION" jdbcType="VARCHAR" property="position" />
+    <result column="YUSHI_SN" jdbcType="VARCHAR" property="yushiSn" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    DEVICE_ID, DEVICE_SYS_MODEL_ID, CONTRACT_ID, DEVICE_SYS_NBR, DEVICE_NAME, ORG_ID, 
+    DEVICE_TYPE, DEVICE_BRAND, MANUFACTURE_SN, SOFTWARE_VERSION, NETWORK_TYPE, SAFE_CONNECT_MEANS, 
+    DEVICE_IP, DEVICE_PORT, USER_NAME, PASSWORD, SIM_NBR, INSTALL_DATE, INSTALL_BY, MOUNTING_FACILITY_TYPE, 
+    ENABLE_UPDATE_DATE, USE_STATUS_FLAG, LONGITUDE, LATITUDE, STATUS_TYPE, STATUS_UPDATE_TIME, 
+    SYNC_STATUS, CREATE_BY, CREATE_TIME, UPDATE_BY, UPDATE_TIME, REMARK, POWER_TYPE, 
+    TRANSMISSION_MODE, BANDWIDTH, OWNERSHIP, SITE_ID, SECTION_ID_LIST, COLLECTION_TYPE, 
+    ORG_PRIVILEGE_CODE, CONTRACTOR_ID, ARCHITECTURE, SERVER_PLAT_ID, VERIFICATION_MARK, 
+    LINE_STATISTICS_MARK, DEVICE_KEY, DEVICE_STOP_END_TIME, SYNC_MARKUP, INFO_CHECK, 
+    INFO_CHECK_DESC, NET_CONTRACTOR, ITMS2_CAMERA_ID, ITMS2_DEVICE_ID, POWER_OFF_NETWORK, 
+    ITMS2_CAMERA_SN, TO_TABLE, ITMS2_ISGUN, POSITION, YUSHI_SN
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_DEVICE_SYS
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_DEVICE_SYS
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    insert into T_DEVICE_SYS (DEVICE_ID, DEVICE_SYS_MODEL_ID, CONTRACT_ID, 
+      DEVICE_SYS_NBR, DEVICE_NAME, ORG_ID, 
+      DEVICE_TYPE, DEVICE_BRAND, MANUFACTURE_SN, 
+      SOFTWARE_VERSION, NETWORK_TYPE, SAFE_CONNECT_MEANS, 
+      DEVICE_IP, DEVICE_PORT, USER_NAME, 
+      PASSWORD, SIM_NBR, INSTALL_DATE, 
+      INSTALL_BY, MOUNTING_FACILITY_TYPE, ENABLE_UPDATE_DATE, 
+      USE_STATUS_FLAG, LONGITUDE, LATITUDE, 
+      STATUS_TYPE, STATUS_UPDATE_TIME, SYNC_STATUS, 
+      CREATE_BY, CREATE_TIME, UPDATE_BY, 
+      UPDATE_TIME, REMARK, POWER_TYPE, 
+      TRANSMISSION_MODE, BANDWIDTH, OWNERSHIP, 
+      SITE_ID, SECTION_ID_LIST, COLLECTION_TYPE, 
+      ORG_PRIVILEGE_CODE, CONTRACTOR_ID, ARCHITECTURE, 
+      SERVER_PLAT_ID, VERIFICATION_MARK, LINE_STATISTICS_MARK, 
+      DEVICE_KEY, DEVICE_STOP_END_TIME, SYNC_MARKUP, 
+      INFO_CHECK, INFO_CHECK_DESC, NET_CONTRACTOR, 
+      ITMS2_CAMERA_ID, ITMS2_DEVICE_ID, POWER_OFF_NETWORK, 
+      ITMS2_CAMERA_SN, TO_TABLE, ITMS2_ISGUN, 
+      POSITION, YUSHI_SN)
+    values (#{deviceId,jdbcType=VARCHAR}, #{deviceSysModelId,jdbcType=VARCHAR}, #{contractId,jdbcType=VARCHAR}, 
+      #{deviceSysNbr,jdbcType=VARCHAR}, #{deviceName,jdbcType=VARCHAR}, #{orgId,jdbcType=VARCHAR}, 
+      #{deviceType,jdbcType=VARCHAR}, #{deviceBrand,jdbcType=VARCHAR}, #{manufactureSn,jdbcType=VARCHAR}, 
+      #{softwareVersion,jdbcType=VARCHAR}, #{networkType,jdbcType=CHAR}, #{safeConnectMeans,jdbcType=CHAR}, 
+      #{deviceIp,jdbcType=VARCHAR}, #{devicePort,jdbcType=DECIMAL}, #{userName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{simNbr,jdbcType=VARCHAR}, #{installDate,jdbcType=TIMESTAMP}, 
+      #{installBy,jdbcType=VARCHAR}, #{mountingFacilityType,jdbcType=CHAR}, #{enableUpdateDate,jdbcType=TIMESTAMP}, 
+      #{useStatusFlag,jdbcType=CHAR}, #{longitude,jdbcType=DECIMAL}, #{latitude,jdbcType=DECIMAL}, 
+      #{statusType,jdbcType=VARCHAR}, #{statusUpdateTime,jdbcType=TIMESTAMP}, #{syncStatus,jdbcType=CHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, #{powerType,jdbcType=CHAR}, 
+      #{transmissionMode,jdbcType=CHAR}, #{bandwidth,jdbcType=VARCHAR}, #{ownership,jdbcType=CHAR}, 
+      #{siteId,jdbcType=VARCHAR}, #{sectionIdList,jdbcType=VARCHAR}, #{collectionType,jdbcType=CHAR}, 
+      #{orgPrivilegeCode,jdbcType=VARCHAR}, #{contractorId,jdbcType=VARCHAR}, #{architecture,jdbcType=CHAR}, 
+      #{serverPlatId,jdbcType=VARCHAR}, #{verificationMark,jdbcType=VARCHAR}, #{lineStatisticsMark,jdbcType=VARCHAR}, 
+      #{deviceKey,jdbcType=VARCHAR}, #{deviceStopEndTime,jdbcType=TIMESTAMP}, #{syncMarkup,jdbcType=CHAR}, 
+      #{infoCheck,jdbcType=VARCHAR}, #{infoCheckDesc,jdbcType=VARCHAR}, #{netContractor,jdbcType=CHAR}, 
+      #{itms2CameraId,jdbcType=VARCHAR}, #{itms2DeviceId,jdbcType=VARCHAR}, #{powerOffNetwork,jdbcType=CHAR}, 
+      #{itms2CameraSn,jdbcType=VARCHAR}, #{toTable,jdbcType=VARCHAR}, #{itms2Isgun,jdbcType=VARCHAR}, 
+      #{position,jdbcType=VARCHAR}, #{yushiSn,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    insert into T_DEVICE_SYS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        DEVICE_ID,
+      </if>
+      <if test="deviceSysModelId != null">
+        DEVICE_SYS_MODEL_ID,
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID,
+      </if>
+      <if test="deviceSysNbr != null">
+        DEVICE_SYS_NBR,
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME,
+      </if>
+      <if test="orgId != null">
+        ORG_ID,
+      </if>
+      <if test="deviceType != null">
+        DEVICE_TYPE,
+      </if>
+      <if test="deviceBrand != null">
+        DEVICE_BRAND,
+      </if>
+      <if test="manufactureSn != null">
+        MANUFACTURE_SN,
+      </if>
+      <if test="softwareVersion != null">
+        SOFTWARE_VERSION,
+      </if>
+      <if test="networkType != null">
+        NETWORK_TYPE,
+      </if>
+      <if test="safeConnectMeans != null">
+        SAFE_CONNECT_MEANS,
+      </if>
+      <if test="deviceIp != null">
+        DEVICE_IP,
+      </if>
+      <if test="devicePort != null">
+        DEVICE_PORT,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="simNbr != null">
+        SIM_NBR,
+      </if>
+      <if test="installDate != null">
+        INSTALL_DATE,
+      </if>
+      <if test="installBy != null">
+        INSTALL_BY,
+      </if>
+      <if test="mountingFacilityType != null">
+        MOUNTING_FACILITY_TYPE,
+      </if>
+      <if test="enableUpdateDate != null">
+        ENABLE_UPDATE_DATE,
+      </if>
+      <if test="useStatusFlag != null">
+        USE_STATUS_FLAG,
+      </if>
+      <if test="longitude != null">
+        LONGITUDE,
+      </if>
+      <if test="latitude != null">
+        LATITUDE,
+      </if>
+      <if test="statusType != null">
+        STATUS_TYPE,
+      </if>
+      <if test="statusUpdateTime != null">
+        STATUS_UPDATE_TIME,
+      </if>
+      <if test="syncStatus != null">
+        SYNC_STATUS,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="powerType != null">
+        POWER_TYPE,
+      </if>
+      <if test="transmissionMode != null">
+        TRANSMISSION_MODE,
+      </if>
+      <if test="bandwidth != null">
+        BANDWIDTH,
+      </if>
+      <if test="ownership != null">
+        OWNERSHIP,
+      </if>
+      <if test="siteId != null">
+        SITE_ID,
+      </if>
+      <if test="sectionIdList != null">
+        SECTION_ID_LIST,
+      </if>
+      <if test="collectionType != null">
+        COLLECTION_TYPE,
+      </if>
+      <if test="orgPrivilegeCode != null">
+        ORG_PRIVILEGE_CODE,
+      </if>
+      <if test="contractorId != null">
+        CONTRACTOR_ID,
+      </if>
+      <if test="architecture != null">
+        ARCHITECTURE,
+      </if>
+      <if test="serverPlatId != null">
+        SERVER_PLAT_ID,
+      </if>
+      <if test="verificationMark != null">
+        VERIFICATION_MARK,
+      </if>
+      <if test="lineStatisticsMark != null">
+        LINE_STATISTICS_MARK,
+      </if>
+      <if test="deviceKey != null">
+        DEVICE_KEY,
+      </if>
+      <if test="deviceStopEndTime != null">
+        DEVICE_STOP_END_TIME,
+      </if>
+      <if test="syncMarkup != null">
+        SYNC_MARKUP,
+      </if>
+      <if test="infoCheck != null">
+        INFO_CHECK,
+      </if>
+      <if test="infoCheckDesc != null">
+        INFO_CHECK_DESC,
+      </if>
+      <if test="netContractor != null">
+        NET_CONTRACTOR,
+      </if>
+      <if test="itms2CameraId != null">
+        ITMS2_CAMERA_ID,
+      </if>
+      <if test="itms2DeviceId != null">
+        ITMS2_DEVICE_ID,
+      </if>
+      <if test="powerOffNetwork != null">
+        POWER_OFF_NETWORK,
+      </if>
+      <if test="itms2CameraSn != null">
+        ITMS2_CAMERA_SN,
+      </if>
+      <if test="toTable != null">
+        TO_TABLE,
+      </if>
+      <if test="itms2Isgun != null">
+        ITMS2_ISGUN,
+      </if>
+      <if test="position != null">
+        POSITION,
+      </if>
+      <if test="yushiSn != null">
+        YUSHI_SN,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysModelId != null">
+        #{deviceSysModelId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysNbr != null">
+        #{deviceSysNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null">
+        #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceBrand != null">
+        #{deviceBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactureSn != null">
+        #{manufactureSn,jdbcType=VARCHAR},
+      </if>
+      <if test="softwareVersion != null">
+        #{softwareVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="networkType != null">
+        #{networkType,jdbcType=CHAR},
+      </if>
+      <if test="safeConnectMeans != null">
+        #{safeConnectMeans,jdbcType=CHAR},
+      </if>
+      <if test="deviceIp != null">
+        #{deviceIp,jdbcType=VARCHAR},
+      </if>
+      <if test="devicePort != null">
+        #{devicePort,jdbcType=DECIMAL},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="simNbr != null">
+        #{simNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="installDate != null">
+        #{installDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="installBy != null">
+        #{installBy,jdbcType=VARCHAR},
+      </if>
+      <if test="mountingFacilityType != null">
+        #{mountingFacilityType,jdbcType=CHAR},
+      </if>
+      <if test="enableUpdateDate != null">
+        #{enableUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="useStatusFlag != null">
+        #{useStatusFlag,jdbcType=CHAR},
+      </if>
+      <if test="longitude != null">
+        #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null">
+        #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="statusType != null">
+        #{statusType,jdbcType=VARCHAR},
+      </if>
+      <if test="statusUpdateTime != null">
+        #{statusUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncStatus != null">
+        #{syncStatus,jdbcType=CHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="powerType != null">
+        #{powerType,jdbcType=CHAR},
+      </if>
+      <if test="transmissionMode != null">
+        #{transmissionMode,jdbcType=CHAR},
+      </if>
+      <if test="bandwidth != null">
+        #{bandwidth,jdbcType=VARCHAR},
+      </if>
+      <if test="ownership != null">
+        #{ownership,jdbcType=CHAR},
+      </if>
+      <if test="siteId != null">
+        #{siteId,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionIdList != null">
+        #{sectionIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionType != null">
+        #{collectionType,jdbcType=CHAR},
+      </if>
+      <if test="orgPrivilegeCode != null">
+        #{orgPrivilegeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contractorId != null">
+        #{contractorId,jdbcType=VARCHAR},
+      </if>
+      <if test="architecture != null">
+        #{architecture,jdbcType=CHAR},
+      </if>
+      <if test="serverPlatId != null">
+        #{serverPlatId,jdbcType=VARCHAR},
+      </if>
+      <if test="verificationMark != null">
+        #{verificationMark,jdbcType=VARCHAR},
+      </if>
+      <if test="lineStatisticsMark != null">
+        #{lineStatisticsMark,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceKey != null">
+        #{deviceKey,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceStopEndTime != null">
+        #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncMarkup != null">
+        #{syncMarkup,jdbcType=CHAR},
+      </if>
+      <if test="infoCheck != null">
+        #{infoCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="infoCheckDesc != null">
+        #{infoCheckDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="netContractor != null">
+        #{netContractor,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraId != null">
+        #{itms2CameraId,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2DeviceId != null">
+        #{itms2DeviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="powerOffNetwork != null">
+        #{powerOffNetwork,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraSn != null">
+        #{itms2CameraSn,jdbcType=VARCHAR},
+      </if>
+      <if test="toTable != null">
+        #{toTable,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2Isgun != null">
+        #{itms2Isgun,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="yushiSn != null">
+        #{yushiSn,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    update T_DEVICE_SYS
+    <set>
+      <if test="deviceSysModelId != null">
+        DEVICE_SYS_MODEL_ID = #{deviceSysModelId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysNbr != null">
+        DEVICE_SYS_NBR = #{deviceSysNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        ORG_ID = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null">
+        DEVICE_TYPE = #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceBrand != null">
+        DEVICE_BRAND = #{deviceBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactureSn != null">
+        MANUFACTURE_SN = #{manufactureSn,jdbcType=VARCHAR},
+      </if>
+      <if test="softwareVersion != null">
+        SOFTWARE_VERSION = #{softwareVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="networkType != null">
+        NETWORK_TYPE = #{networkType,jdbcType=CHAR},
+      </if>
+      <if test="safeConnectMeans != null">
+        SAFE_CONNECT_MEANS = #{safeConnectMeans,jdbcType=CHAR},
+      </if>
+      <if test="deviceIp != null">
+        DEVICE_IP = #{deviceIp,jdbcType=VARCHAR},
+      </if>
+      <if test="devicePort != null">
+        DEVICE_PORT = #{devicePort,jdbcType=DECIMAL},
+      </if>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="simNbr != null">
+        SIM_NBR = #{simNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="installDate != null">
+        INSTALL_DATE = #{installDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="installBy != null">
+        INSTALL_BY = #{installBy,jdbcType=VARCHAR},
+      </if>
+      <if test="mountingFacilityType != null">
+        MOUNTING_FACILITY_TYPE = #{mountingFacilityType,jdbcType=CHAR},
+      </if>
+      <if test="enableUpdateDate != null">
+        ENABLE_UPDATE_DATE = #{enableUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="useStatusFlag != null">
+        USE_STATUS_FLAG = #{useStatusFlag,jdbcType=CHAR},
+      </if>
+      <if test="longitude != null">
+        LONGITUDE = #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null">
+        LATITUDE = #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="statusType != null">
+        STATUS_TYPE = #{statusType,jdbcType=VARCHAR},
+      </if>
+      <if test="statusUpdateTime != null">
+        STATUS_UPDATE_TIME = #{statusUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncStatus != null">
+        SYNC_STATUS = #{syncStatus,jdbcType=CHAR},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="powerType != null">
+        POWER_TYPE = #{powerType,jdbcType=CHAR},
+      </if>
+      <if test="transmissionMode != null">
+        TRANSMISSION_MODE = #{transmissionMode,jdbcType=CHAR},
+      </if>
+      <if test="bandwidth != null">
+        BANDWIDTH = #{bandwidth,jdbcType=VARCHAR},
+      </if>
+      <if test="ownership != null">
+        OWNERSHIP = #{ownership,jdbcType=CHAR},
+      </if>
+      <if test="siteId != null">
+        SITE_ID = #{siteId,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionIdList != null">
+        SECTION_ID_LIST = #{sectionIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionType != null">
+        COLLECTION_TYPE = #{collectionType,jdbcType=CHAR},
+      </if>
+      <if test="orgPrivilegeCode != null">
+        ORG_PRIVILEGE_CODE = #{orgPrivilegeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contractorId != null">
+        CONTRACTOR_ID = #{contractorId,jdbcType=VARCHAR},
+      </if>
+      <if test="architecture != null">
+        ARCHITECTURE = #{architecture,jdbcType=CHAR},
+      </if>
+      <if test="serverPlatId != null">
+        SERVER_PLAT_ID = #{serverPlatId,jdbcType=VARCHAR},
+      </if>
+      <if test="verificationMark != null">
+        VERIFICATION_MARK = #{verificationMark,jdbcType=VARCHAR},
+      </if>
+      <if test="lineStatisticsMark != null">
+        LINE_STATISTICS_MARK = #{lineStatisticsMark,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceKey != null">
+        DEVICE_KEY = #{deviceKey,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceStopEndTime != null">
+        DEVICE_STOP_END_TIME = #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncMarkup != null">
+        SYNC_MARKUP = #{syncMarkup,jdbcType=CHAR},
+      </if>
+      <if test="infoCheck != null">
+        INFO_CHECK = #{infoCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="infoCheckDesc != null">
+        INFO_CHECK_DESC = #{infoCheckDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="netContractor != null">
+        NET_CONTRACTOR = #{netContractor,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraId != null">
+        ITMS2_CAMERA_ID = #{itms2CameraId,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2DeviceId != null">
+        ITMS2_DEVICE_ID = #{itms2DeviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="powerOffNetwork != null">
+        POWER_OFF_NETWORK = #{powerOffNetwork,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraSn != null">
+        ITMS2_CAMERA_SN = #{itms2CameraSn,jdbcType=VARCHAR},
+      </if>
+      <if test="toTable != null">
+        TO_TABLE = #{toTable,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2Isgun != null">
+        ITMS2_ISGUN = #{itms2Isgun,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        POSITION = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="yushiSn != null">
+        YUSHI_SN = #{yushiSn,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    update T_DEVICE_SYS
+    set DEVICE_SYS_MODEL_ID = #{deviceSysModelId,jdbcType=VARCHAR},
+      CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      DEVICE_SYS_NBR = #{deviceSysNbr,jdbcType=VARCHAR},
+      DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      ORG_ID = #{orgId,jdbcType=VARCHAR},
+      DEVICE_TYPE = #{deviceType,jdbcType=VARCHAR},
+      DEVICE_BRAND = #{deviceBrand,jdbcType=VARCHAR},
+      MANUFACTURE_SN = #{manufactureSn,jdbcType=VARCHAR},
+      SOFTWARE_VERSION = #{softwareVersion,jdbcType=VARCHAR},
+      NETWORK_TYPE = #{networkType,jdbcType=CHAR},
+      SAFE_CONNECT_MEANS = #{safeConnectMeans,jdbcType=CHAR},
+      DEVICE_IP = #{deviceIp,jdbcType=VARCHAR},
+      DEVICE_PORT = #{devicePort,jdbcType=DECIMAL},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      SIM_NBR = #{simNbr,jdbcType=VARCHAR},
+      INSTALL_DATE = #{installDate,jdbcType=TIMESTAMP},
+      INSTALL_BY = #{installBy,jdbcType=VARCHAR},
+      MOUNTING_FACILITY_TYPE = #{mountingFacilityType,jdbcType=CHAR},
+      ENABLE_UPDATE_DATE = #{enableUpdateDate,jdbcType=TIMESTAMP},
+      USE_STATUS_FLAG = #{useStatusFlag,jdbcType=CHAR},
+      LONGITUDE = #{longitude,jdbcType=DECIMAL},
+      LATITUDE = #{latitude,jdbcType=DECIMAL},
+      STATUS_TYPE = #{statusType,jdbcType=VARCHAR},
+      STATUS_UPDATE_TIME = #{statusUpdateTime,jdbcType=TIMESTAMP},
+      SYNC_STATUS = #{syncStatus,jdbcType=CHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      POWER_TYPE = #{powerType,jdbcType=CHAR},
+      TRANSMISSION_MODE = #{transmissionMode,jdbcType=CHAR},
+      BANDWIDTH = #{bandwidth,jdbcType=VARCHAR},
+      OWNERSHIP = #{ownership,jdbcType=CHAR},
+      SITE_ID = #{siteId,jdbcType=VARCHAR},
+      SECTION_ID_LIST = #{sectionIdList,jdbcType=VARCHAR},
+      COLLECTION_TYPE = #{collectionType,jdbcType=CHAR},
+      ORG_PRIVILEGE_CODE = #{orgPrivilegeCode,jdbcType=VARCHAR},
+      CONTRACTOR_ID = #{contractorId,jdbcType=VARCHAR},
+      ARCHITECTURE = #{architecture,jdbcType=CHAR},
+      SERVER_PLAT_ID = #{serverPlatId,jdbcType=VARCHAR},
+      VERIFICATION_MARK = #{verificationMark,jdbcType=VARCHAR},
+      LINE_STATISTICS_MARK = #{lineStatisticsMark,jdbcType=VARCHAR},
+      DEVICE_KEY = #{deviceKey,jdbcType=VARCHAR},
+      DEVICE_STOP_END_TIME = #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      SYNC_MARKUP = #{syncMarkup,jdbcType=CHAR},
+      INFO_CHECK = #{infoCheck,jdbcType=VARCHAR},
+      INFO_CHECK_DESC = #{infoCheckDesc,jdbcType=VARCHAR},
+      NET_CONTRACTOR = #{netContractor,jdbcType=CHAR},
+      ITMS2_CAMERA_ID = #{itms2CameraId,jdbcType=VARCHAR},
+      ITMS2_DEVICE_ID = #{itms2DeviceId,jdbcType=VARCHAR},
+      POWER_OFF_NETWORK = #{powerOffNetwork,jdbcType=CHAR},
+      ITMS2_CAMERA_SN = #{itms2CameraSn,jdbcType=VARCHAR},
+      TO_TABLE = #{toTable,jdbcType=VARCHAR},
+      ITMS2_ISGUN = #{itms2Isgun,jdbcType=VARCHAR},
+      POSITION = #{position,jdbcType=VARCHAR},
+      YUSHI_SN = #{yushiSn,jdbcType=VARCHAR}
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="cy.its.trafficSituation.domain.models.DeviceSys">
+    <id column="DEVICE_ID" jdbcType="VARCHAR" property="deviceId" />
+    <result column="DEVICE_SYS_MODEL_ID" jdbcType="VARCHAR" property="deviceSysModelId" />
+    <result column="CONTRACT_ID" jdbcType="VARCHAR" property="contractId" />
+    <result column="DEVICE_SYS_NBR" jdbcType="VARCHAR" property="deviceSysNbr" />
+    <result column="DEVICE_NAME" jdbcType="VARCHAR" property="deviceName" />
+    <result column="ORG_ID" jdbcType="VARCHAR" property="orgId" />
+    <result column="DEVICE_TYPE" jdbcType="VARCHAR" property="deviceType" />
+    <result column="DEVICE_BRAND" jdbcType="VARCHAR" property="deviceBrand" />
+    <result column="MANUFACTURE_SN" jdbcType="VARCHAR" property="manufactureSn" />
+    <result column="SOFTWARE_VERSION" jdbcType="VARCHAR" property="softwareVersion" />
+    <result column="NETWORK_TYPE" jdbcType="CHAR" property="networkType" />
+    <result column="SAFE_CONNECT_MEANS" jdbcType="CHAR" property="safeConnectMeans" />
+    <result column="DEVICE_IP" jdbcType="VARCHAR" property="deviceIp" />
+    <result column="DEVICE_PORT" jdbcType="DECIMAL" property="devicePort" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="SIM_NBR" jdbcType="VARCHAR" property="simNbr" />
+    <result column="INSTALL_DATE" jdbcType="TIMESTAMP" property="installDate" />
+    <result column="INSTALL_BY" jdbcType="VARCHAR" property="installBy" />
+    <result column="MOUNTING_FACILITY_TYPE" jdbcType="CHAR" property="mountingFacilityType" />
+    <result column="ENABLE_UPDATE_DATE" jdbcType="TIMESTAMP" property="enableUpdateDate" />
+    <result column="USE_STATUS_FLAG" jdbcType="CHAR" property="useStatusFlag" />
+    <result column="LONGITUDE" jdbcType="DECIMAL" property="longitude" />
+    <result column="LATITUDE" jdbcType="DECIMAL" property="latitude" />
+    <result column="STATUS_TYPE" jdbcType="VARCHAR" property="statusType" />
+    <result column="STATUS_UPDATE_TIME" jdbcType="TIMESTAMP" property="statusUpdateTime" />
+    <result column="SYNC_STATUS" jdbcType="CHAR" property="syncStatus" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="POWER_TYPE" jdbcType="CHAR" property="powerType" />
+    <result column="TRANSMISSION_MODE" jdbcType="CHAR" property="transmissionMode" />
+    <result column="BANDWIDTH" jdbcType="VARCHAR" property="bandwidth" />
+    <result column="OWNERSHIP" jdbcType="CHAR" property="ownership" />
+    <result column="SITE_ID" jdbcType="VARCHAR" property="siteId" />
+    <result column="SECTION_ID_LIST" jdbcType="VARCHAR" property="sectionIdList" />
+    <result column="COLLECTION_TYPE" jdbcType="CHAR" property="collectionType" />
+    <result column="ORG_PRIVILEGE_CODE" jdbcType="VARCHAR" property="orgPrivilegeCode" />
+    <result column="CONTRACTOR_ID" jdbcType="VARCHAR" property="contractorId" />
+    <result column="ARCHITECTURE" jdbcType="CHAR" property="architecture" />
+    <result column="SERVER_PLAT_ID" jdbcType="VARCHAR" property="serverPlatId" />
+    <result column="VERIFICATION_MARK" jdbcType="VARCHAR" property="verificationMark" />
+    <result column="LINE_STATISTICS_MARK" jdbcType="VARCHAR" property="lineStatisticsMark" />
+    <result column="DEVICE_KEY" jdbcType="VARCHAR" property="deviceKey" />
+    <result column="DEVICE_STOP_END_TIME" jdbcType="TIMESTAMP" property="deviceStopEndTime" />
+    <result column="SYNC_MARKUP" jdbcType="CHAR" property="syncMarkup" />
+    <result column="INFO_CHECK" jdbcType="VARCHAR" property="infoCheck" />
+    <result column="INFO_CHECK_DESC" jdbcType="VARCHAR" property="infoCheckDesc" />
+    <result column="NET_CONTRACTOR" jdbcType="CHAR" property="netContractor" />
+    <result column="ITMS2_CAMERA_ID" jdbcType="VARCHAR" property="itms2CameraId" />
+    <result column="ITMS2_DEVICE_ID" jdbcType="VARCHAR" property="itms2DeviceId" />
+    <result column="POWER_OFF_NETWORK" jdbcType="CHAR" property="powerOffNetwork" />
+    <result column="ITMS2_CAMERA_SN" jdbcType="VARCHAR" property="itms2CameraSn" />
+    <result column="TO_TABLE" jdbcType="VARCHAR" property="toTable" />
+    <result column="ITMS2_ISGUN" jdbcType="VARCHAR" property="itms2Isgun" />
+    <result column="POSITION" jdbcType="VARCHAR" property="position" />
+    <result column="YUSHI_SN" jdbcType="VARCHAR" property="yushiSn" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    DEVICE_ID, DEVICE_SYS_MODEL_ID, CONTRACT_ID, DEVICE_SYS_NBR, DEVICE_NAME, ORG_ID, 
+    DEVICE_TYPE, DEVICE_BRAND, MANUFACTURE_SN, SOFTWARE_VERSION, NETWORK_TYPE, SAFE_CONNECT_MEANS, 
+    DEVICE_IP, DEVICE_PORT, USER_NAME, PASSWORD, SIM_NBR, INSTALL_DATE, INSTALL_BY, MOUNTING_FACILITY_TYPE, 
+    ENABLE_UPDATE_DATE, USE_STATUS_FLAG, LONGITUDE, LATITUDE, STATUS_TYPE, STATUS_UPDATE_TIME, 
+    SYNC_STATUS, CREATE_BY, CREATE_TIME, UPDATE_BY, UPDATE_TIME, REMARK, POWER_TYPE, 
+    TRANSMISSION_MODE, BANDWIDTH, OWNERSHIP, SITE_ID, SECTION_ID_LIST, COLLECTION_TYPE, 
+    ORG_PRIVILEGE_CODE, CONTRACTOR_ID, ARCHITECTURE, SERVER_PLAT_ID, VERIFICATION_MARK, 
+    LINE_STATISTICS_MARK, DEVICE_KEY, DEVICE_STOP_END_TIME, SYNC_MARKUP, INFO_CHECK, 
+    INFO_CHECK_DESC, NET_CONTRACTOR, ITMS2_CAMERA_ID, ITMS2_DEVICE_ID, POWER_OFF_NETWORK, 
+    ITMS2_CAMERA_SN, TO_TABLE, ITMS2_ISGUN, POSITION, YUSHI_SN
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_DEVICE_SYS
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_DEVICE_SYS
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    insert into T_DEVICE_SYS (DEVICE_ID, DEVICE_SYS_MODEL_ID, CONTRACT_ID, 
+      DEVICE_SYS_NBR, DEVICE_NAME, ORG_ID, 
+      DEVICE_TYPE, DEVICE_BRAND, MANUFACTURE_SN, 
+      SOFTWARE_VERSION, NETWORK_TYPE, SAFE_CONNECT_MEANS, 
+      DEVICE_IP, DEVICE_PORT, USER_NAME, 
+      PASSWORD, SIM_NBR, INSTALL_DATE, 
+      INSTALL_BY, MOUNTING_FACILITY_TYPE, ENABLE_UPDATE_DATE, 
+      USE_STATUS_FLAG, LONGITUDE, LATITUDE, 
+      STATUS_TYPE, STATUS_UPDATE_TIME, SYNC_STATUS, 
+      CREATE_BY, CREATE_TIME, UPDATE_BY, 
+      UPDATE_TIME, REMARK, POWER_TYPE, 
+      TRANSMISSION_MODE, BANDWIDTH, OWNERSHIP, 
+      SITE_ID, SECTION_ID_LIST, COLLECTION_TYPE, 
+      ORG_PRIVILEGE_CODE, CONTRACTOR_ID, ARCHITECTURE, 
+      SERVER_PLAT_ID, VERIFICATION_MARK, LINE_STATISTICS_MARK, 
+      DEVICE_KEY, DEVICE_STOP_END_TIME, SYNC_MARKUP, 
+      INFO_CHECK, INFO_CHECK_DESC, NET_CONTRACTOR, 
+      ITMS2_CAMERA_ID, ITMS2_DEVICE_ID, POWER_OFF_NETWORK, 
+      ITMS2_CAMERA_SN, TO_TABLE, ITMS2_ISGUN, 
+      POSITION, YUSHI_SN)
+    values (#{deviceId,jdbcType=VARCHAR}, #{deviceSysModelId,jdbcType=VARCHAR}, #{contractId,jdbcType=VARCHAR}, 
+      #{deviceSysNbr,jdbcType=VARCHAR}, #{deviceName,jdbcType=VARCHAR}, #{orgId,jdbcType=VARCHAR}, 
+      #{deviceType,jdbcType=VARCHAR}, #{deviceBrand,jdbcType=VARCHAR}, #{manufactureSn,jdbcType=VARCHAR}, 
+      #{softwareVersion,jdbcType=VARCHAR}, #{networkType,jdbcType=CHAR}, #{safeConnectMeans,jdbcType=CHAR}, 
+      #{deviceIp,jdbcType=VARCHAR}, #{devicePort,jdbcType=DECIMAL}, #{userName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{simNbr,jdbcType=VARCHAR}, #{installDate,jdbcType=TIMESTAMP}, 
+      #{installBy,jdbcType=VARCHAR}, #{mountingFacilityType,jdbcType=CHAR}, #{enableUpdateDate,jdbcType=TIMESTAMP}, 
+      #{useStatusFlag,jdbcType=CHAR}, #{longitude,jdbcType=DECIMAL}, #{latitude,jdbcType=DECIMAL}, 
+      #{statusType,jdbcType=VARCHAR}, #{statusUpdateTime,jdbcType=TIMESTAMP}, #{syncStatus,jdbcType=CHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, #{powerType,jdbcType=CHAR}, 
+      #{transmissionMode,jdbcType=CHAR}, #{bandwidth,jdbcType=VARCHAR}, #{ownership,jdbcType=CHAR}, 
+      #{siteId,jdbcType=VARCHAR}, #{sectionIdList,jdbcType=VARCHAR}, #{collectionType,jdbcType=CHAR}, 
+      #{orgPrivilegeCode,jdbcType=VARCHAR}, #{contractorId,jdbcType=VARCHAR}, #{architecture,jdbcType=CHAR}, 
+      #{serverPlatId,jdbcType=VARCHAR}, #{verificationMark,jdbcType=VARCHAR}, #{lineStatisticsMark,jdbcType=VARCHAR}, 
+      #{deviceKey,jdbcType=VARCHAR}, #{deviceStopEndTime,jdbcType=TIMESTAMP}, #{syncMarkup,jdbcType=CHAR}, 
+      #{infoCheck,jdbcType=VARCHAR}, #{infoCheckDesc,jdbcType=VARCHAR}, #{netContractor,jdbcType=CHAR}, 
+      #{itms2CameraId,jdbcType=VARCHAR}, #{itms2DeviceId,jdbcType=VARCHAR}, #{powerOffNetwork,jdbcType=CHAR}, 
+      #{itms2CameraSn,jdbcType=VARCHAR}, #{toTable,jdbcType=VARCHAR}, #{itms2Isgun,jdbcType=VARCHAR}, 
+      #{position,jdbcType=VARCHAR}, #{yushiSn,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    insert into T_DEVICE_SYS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        DEVICE_ID,
+      </if>
+      <if test="deviceSysModelId != null">
+        DEVICE_SYS_MODEL_ID,
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID,
+      </if>
+      <if test="deviceSysNbr != null">
+        DEVICE_SYS_NBR,
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME,
+      </if>
+      <if test="orgId != null">
+        ORG_ID,
+      </if>
+      <if test="deviceType != null">
+        DEVICE_TYPE,
+      </if>
+      <if test="deviceBrand != null">
+        DEVICE_BRAND,
+      </if>
+      <if test="manufactureSn != null">
+        MANUFACTURE_SN,
+      </if>
+      <if test="softwareVersion != null">
+        SOFTWARE_VERSION,
+      </if>
+      <if test="networkType != null">
+        NETWORK_TYPE,
+      </if>
+      <if test="safeConnectMeans != null">
+        SAFE_CONNECT_MEANS,
+      </if>
+      <if test="deviceIp != null">
+        DEVICE_IP,
+      </if>
+      <if test="devicePort != null">
+        DEVICE_PORT,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="simNbr != null">
+        SIM_NBR,
+      </if>
+      <if test="installDate != null">
+        INSTALL_DATE,
+      </if>
+      <if test="installBy != null">
+        INSTALL_BY,
+      </if>
+      <if test="mountingFacilityType != null">
+        MOUNTING_FACILITY_TYPE,
+      </if>
+      <if test="enableUpdateDate != null">
+        ENABLE_UPDATE_DATE,
+      </if>
+      <if test="useStatusFlag != null">
+        USE_STATUS_FLAG,
+      </if>
+      <if test="longitude != null">
+        LONGITUDE,
+      </if>
+      <if test="latitude != null">
+        LATITUDE,
+      </if>
+      <if test="statusType != null">
+        STATUS_TYPE,
+      </if>
+      <if test="statusUpdateTime != null">
+        STATUS_UPDATE_TIME,
+      </if>
+      <if test="syncStatus != null">
+        SYNC_STATUS,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="powerType != null">
+        POWER_TYPE,
+      </if>
+      <if test="transmissionMode != null">
+        TRANSMISSION_MODE,
+      </if>
+      <if test="bandwidth != null">
+        BANDWIDTH,
+      </if>
+      <if test="ownership != null">
+        OWNERSHIP,
+      </if>
+      <if test="siteId != null">
+        SITE_ID,
+      </if>
+      <if test="sectionIdList != null">
+        SECTION_ID_LIST,
+      </if>
+      <if test="collectionType != null">
+        COLLECTION_TYPE,
+      </if>
+      <if test="orgPrivilegeCode != null">
+        ORG_PRIVILEGE_CODE,
+      </if>
+      <if test="contractorId != null">
+        CONTRACTOR_ID,
+      </if>
+      <if test="architecture != null">
+        ARCHITECTURE,
+      </if>
+      <if test="serverPlatId != null">
+        SERVER_PLAT_ID,
+      </if>
+      <if test="verificationMark != null">
+        VERIFICATION_MARK,
+      </if>
+      <if test="lineStatisticsMark != null">
+        LINE_STATISTICS_MARK,
+      </if>
+      <if test="deviceKey != null">
+        DEVICE_KEY,
+      </if>
+      <if test="deviceStopEndTime != null">
+        DEVICE_STOP_END_TIME,
+      </if>
+      <if test="syncMarkup != null">
+        SYNC_MARKUP,
+      </if>
+      <if test="infoCheck != null">
+        INFO_CHECK,
+      </if>
+      <if test="infoCheckDesc != null">
+        INFO_CHECK_DESC,
+      </if>
+      <if test="netContractor != null">
+        NET_CONTRACTOR,
+      </if>
+      <if test="itms2CameraId != null">
+        ITMS2_CAMERA_ID,
+      </if>
+      <if test="itms2DeviceId != null">
+        ITMS2_DEVICE_ID,
+      </if>
+      <if test="powerOffNetwork != null">
+        POWER_OFF_NETWORK,
+      </if>
+      <if test="itms2CameraSn != null">
+        ITMS2_CAMERA_SN,
+      </if>
+      <if test="toTable != null">
+        TO_TABLE,
+      </if>
+      <if test="itms2Isgun != null">
+        ITMS2_ISGUN,
+      </if>
+      <if test="position != null">
+        POSITION,
+      </if>
+      <if test="yushiSn != null">
+        YUSHI_SN,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysModelId != null">
+        #{deviceSysModelId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysNbr != null">
+        #{deviceSysNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null">
+        #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceBrand != null">
+        #{deviceBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactureSn != null">
+        #{manufactureSn,jdbcType=VARCHAR},
+      </if>
+      <if test="softwareVersion != null">
+        #{softwareVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="networkType != null">
+        #{networkType,jdbcType=CHAR},
+      </if>
+      <if test="safeConnectMeans != null">
+        #{safeConnectMeans,jdbcType=CHAR},
+      </if>
+      <if test="deviceIp != null">
+        #{deviceIp,jdbcType=VARCHAR},
+      </if>
+      <if test="devicePort != null">
+        #{devicePort,jdbcType=DECIMAL},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="simNbr != null">
+        #{simNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="installDate != null">
+        #{installDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="installBy != null">
+        #{installBy,jdbcType=VARCHAR},
+      </if>
+      <if test="mountingFacilityType != null">
+        #{mountingFacilityType,jdbcType=CHAR},
+      </if>
+      <if test="enableUpdateDate != null">
+        #{enableUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="useStatusFlag != null">
+        #{useStatusFlag,jdbcType=CHAR},
+      </if>
+      <if test="longitude != null">
+        #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null">
+        #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="statusType != null">
+        #{statusType,jdbcType=VARCHAR},
+      </if>
+      <if test="statusUpdateTime != null">
+        #{statusUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncStatus != null">
+        #{syncStatus,jdbcType=CHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="powerType != null">
+        #{powerType,jdbcType=CHAR},
+      </if>
+      <if test="transmissionMode != null">
+        #{transmissionMode,jdbcType=CHAR},
+      </if>
+      <if test="bandwidth != null">
+        #{bandwidth,jdbcType=VARCHAR},
+      </if>
+      <if test="ownership != null">
+        #{ownership,jdbcType=CHAR},
+      </if>
+      <if test="siteId != null">
+        #{siteId,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionIdList != null">
+        #{sectionIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionType != null">
+        #{collectionType,jdbcType=CHAR},
+      </if>
+      <if test="orgPrivilegeCode != null">
+        #{orgPrivilegeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contractorId != null">
+        #{contractorId,jdbcType=VARCHAR},
+      </if>
+      <if test="architecture != null">
+        #{architecture,jdbcType=CHAR},
+      </if>
+      <if test="serverPlatId != null">
+        #{serverPlatId,jdbcType=VARCHAR},
+      </if>
+      <if test="verificationMark != null">
+        #{verificationMark,jdbcType=VARCHAR},
+      </if>
+      <if test="lineStatisticsMark != null">
+        #{lineStatisticsMark,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceKey != null">
+        #{deviceKey,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceStopEndTime != null">
+        #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncMarkup != null">
+        #{syncMarkup,jdbcType=CHAR},
+      </if>
+      <if test="infoCheck != null">
+        #{infoCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="infoCheckDesc != null">
+        #{infoCheckDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="netContractor != null">
+        #{netContractor,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraId != null">
+        #{itms2CameraId,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2DeviceId != null">
+        #{itms2DeviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="powerOffNetwork != null">
+        #{powerOffNetwork,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraSn != null">
+        #{itms2CameraSn,jdbcType=VARCHAR},
+      </if>
+      <if test="toTable != null">
+        #{toTable,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2Isgun != null">
+        #{itms2Isgun,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="yushiSn != null">
+        #{yushiSn,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    update T_DEVICE_SYS
+    <set>
+      <if test="deviceSysModelId != null">
+        DEVICE_SYS_MODEL_ID = #{deviceSysModelId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysNbr != null">
+        DEVICE_SYS_NBR = #{deviceSysNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        ORG_ID = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null">
+        DEVICE_TYPE = #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceBrand != null">
+        DEVICE_BRAND = #{deviceBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactureSn != null">
+        MANUFACTURE_SN = #{manufactureSn,jdbcType=VARCHAR},
+      </if>
+      <if test="softwareVersion != null">
+        SOFTWARE_VERSION = #{softwareVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="networkType != null">
+        NETWORK_TYPE = #{networkType,jdbcType=CHAR},
+      </if>
+      <if test="safeConnectMeans != null">
+        SAFE_CONNECT_MEANS = #{safeConnectMeans,jdbcType=CHAR},
+      </if>
+      <if test="deviceIp != null">
+        DEVICE_IP = #{deviceIp,jdbcType=VARCHAR},
+      </if>
+      <if test="devicePort != null">
+        DEVICE_PORT = #{devicePort,jdbcType=DECIMAL},
+      </if>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="simNbr != null">
+        SIM_NBR = #{simNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="installDate != null">
+        INSTALL_DATE = #{installDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="installBy != null">
+        INSTALL_BY = #{installBy,jdbcType=VARCHAR},
+      </if>
+      <if test="mountingFacilityType != null">
+        MOUNTING_FACILITY_TYPE = #{mountingFacilityType,jdbcType=CHAR},
+      </if>
+      <if test="enableUpdateDate != null">
+        ENABLE_UPDATE_DATE = #{enableUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="useStatusFlag != null">
+        USE_STATUS_FLAG = #{useStatusFlag,jdbcType=CHAR},
+      </if>
+      <if test="longitude != null">
+        LONGITUDE = #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null">
+        LATITUDE = #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="statusType != null">
+        STATUS_TYPE = #{statusType,jdbcType=VARCHAR},
+      </if>
+      <if test="statusUpdateTime != null">
+        STATUS_UPDATE_TIME = #{statusUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncStatus != null">
+        SYNC_STATUS = #{syncStatus,jdbcType=CHAR},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="powerType != null">
+        POWER_TYPE = #{powerType,jdbcType=CHAR},
+      </if>
+      <if test="transmissionMode != null">
+        TRANSMISSION_MODE = #{transmissionMode,jdbcType=CHAR},
+      </if>
+      <if test="bandwidth != null">
+        BANDWIDTH = #{bandwidth,jdbcType=VARCHAR},
+      </if>
+      <if test="ownership != null">
+        OWNERSHIP = #{ownership,jdbcType=CHAR},
+      </if>
+      <if test="siteId != null">
+        SITE_ID = #{siteId,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionIdList != null">
+        SECTION_ID_LIST = #{sectionIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionType != null">
+        COLLECTION_TYPE = #{collectionType,jdbcType=CHAR},
+      </if>
+      <if test="orgPrivilegeCode != null">
+        ORG_PRIVILEGE_CODE = #{orgPrivilegeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contractorId != null">
+        CONTRACTOR_ID = #{contractorId,jdbcType=VARCHAR},
+      </if>
+      <if test="architecture != null">
+        ARCHITECTURE = #{architecture,jdbcType=CHAR},
+      </if>
+      <if test="serverPlatId != null">
+        SERVER_PLAT_ID = #{serverPlatId,jdbcType=VARCHAR},
+      </if>
+      <if test="verificationMark != null">
+        VERIFICATION_MARK = #{verificationMark,jdbcType=VARCHAR},
+      </if>
+      <if test="lineStatisticsMark != null">
+        LINE_STATISTICS_MARK = #{lineStatisticsMark,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceKey != null">
+        DEVICE_KEY = #{deviceKey,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceStopEndTime != null">
+        DEVICE_STOP_END_TIME = #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncMarkup != null">
+        SYNC_MARKUP = #{syncMarkup,jdbcType=CHAR},
+      </if>
+      <if test="infoCheck != null">
+        INFO_CHECK = #{infoCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="infoCheckDesc != null">
+        INFO_CHECK_DESC = #{infoCheckDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="netContractor != null">
+        NET_CONTRACTOR = #{netContractor,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraId != null">
+        ITMS2_CAMERA_ID = #{itms2CameraId,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2DeviceId != null">
+        ITMS2_DEVICE_ID = #{itms2DeviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="powerOffNetwork != null">
+        POWER_OFF_NETWORK = #{powerOffNetwork,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraSn != null">
+        ITMS2_CAMERA_SN = #{itms2CameraSn,jdbcType=VARCHAR},
+      </if>
+      <if test="toTable != null">
+        TO_TABLE = #{toTable,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2Isgun != null">
+        ITMS2_ISGUN = #{itms2Isgun,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        POSITION = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="yushiSn != null">
+        YUSHI_SN = #{yushiSn,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    update T_DEVICE_SYS
+    set DEVICE_SYS_MODEL_ID = #{deviceSysModelId,jdbcType=VARCHAR},
+      CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      DEVICE_SYS_NBR = #{deviceSysNbr,jdbcType=VARCHAR},
+      DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      ORG_ID = #{orgId,jdbcType=VARCHAR},
+      DEVICE_TYPE = #{deviceType,jdbcType=VARCHAR},
+      DEVICE_BRAND = #{deviceBrand,jdbcType=VARCHAR},
+      MANUFACTURE_SN = #{manufactureSn,jdbcType=VARCHAR},
+      SOFTWARE_VERSION = #{softwareVersion,jdbcType=VARCHAR},
+      NETWORK_TYPE = #{networkType,jdbcType=CHAR},
+      SAFE_CONNECT_MEANS = #{safeConnectMeans,jdbcType=CHAR},
+      DEVICE_IP = #{deviceIp,jdbcType=VARCHAR},
+      DEVICE_PORT = #{devicePort,jdbcType=DECIMAL},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      SIM_NBR = #{simNbr,jdbcType=VARCHAR},
+      INSTALL_DATE = #{installDate,jdbcType=TIMESTAMP},
+      INSTALL_BY = #{installBy,jdbcType=VARCHAR},
+      MOUNTING_FACILITY_TYPE = #{mountingFacilityType,jdbcType=CHAR},
+      ENABLE_UPDATE_DATE = #{enableUpdateDate,jdbcType=TIMESTAMP},
+      USE_STATUS_FLAG = #{useStatusFlag,jdbcType=CHAR},
+      LONGITUDE = #{longitude,jdbcType=DECIMAL},
+      LATITUDE = #{latitude,jdbcType=DECIMAL},
+      STATUS_TYPE = #{statusType,jdbcType=VARCHAR},
+      STATUS_UPDATE_TIME = #{statusUpdateTime,jdbcType=TIMESTAMP},
+      SYNC_STATUS = #{syncStatus,jdbcType=CHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      POWER_TYPE = #{powerType,jdbcType=CHAR},
+      TRANSMISSION_MODE = #{transmissionMode,jdbcType=CHAR},
+      BANDWIDTH = #{bandwidth,jdbcType=VARCHAR},
+      OWNERSHIP = #{ownership,jdbcType=CHAR},
+      SITE_ID = #{siteId,jdbcType=VARCHAR},
+      SECTION_ID_LIST = #{sectionIdList,jdbcType=VARCHAR},
+      COLLECTION_TYPE = #{collectionType,jdbcType=CHAR},
+      ORG_PRIVILEGE_CODE = #{orgPrivilegeCode,jdbcType=VARCHAR},
+      CONTRACTOR_ID = #{contractorId,jdbcType=VARCHAR},
+      ARCHITECTURE = #{architecture,jdbcType=CHAR},
+      SERVER_PLAT_ID = #{serverPlatId,jdbcType=VARCHAR},
+      VERIFICATION_MARK = #{verificationMark,jdbcType=VARCHAR},
+      LINE_STATISTICS_MARK = #{lineStatisticsMark,jdbcType=VARCHAR},
+      DEVICE_KEY = #{deviceKey,jdbcType=VARCHAR},
+      DEVICE_STOP_END_TIME = #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      SYNC_MARKUP = #{syncMarkup,jdbcType=CHAR},
+      INFO_CHECK = #{infoCheck,jdbcType=VARCHAR},
+      INFO_CHECK_DESC = #{infoCheckDesc,jdbcType=VARCHAR},
+      NET_CONTRACTOR = #{netContractor,jdbcType=CHAR},
+      ITMS2_CAMERA_ID = #{itms2CameraId,jdbcType=VARCHAR},
+      ITMS2_DEVICE_ID = #{itms2DeviceId,jdbcType=VARCHAR},
+      POWER_OFF_NETWORK = #{powerOffNetwork,jdbcType=CHAR},
+      ITMS2_CAMERA_SN = #{itms2CameraSn,jdbcType=VARCHAR},
+      TO_TABLE = #{toTable,jdbcType=VARCHAR},
+      ITMS2_ISGUN = #{itms2Isgun,jdbcType=VARCHAR},
+      POSITION = #{position,jdbcType=VARCHAR},
+      YUSHI_SN = #{yushiSn,jdbcType=VARCHAR}
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="cy.its.trafficSituation.domain.models.DeviceSys">
+    <id column="DEVICE_ID" jdbcType="VARCHAR" property="deviceId" />
+    <result column="DEVICE_SYS_MODEL_ID" jdbcType="VARCHAR" property="deviceSysModelId" />
+    <result column="CONTRACT_ID" jdbcType="VARCHAR" property="contractId" />
+    <result column="DEVICE_SYS_NBR" jdbcType="VARCHAR" property="deviceSysNbr" />
+    <result column="DEVICE_NAME" jdbcType="VARCHAR" property="deviceName" />
+    <result column="ORG_ID" jdbcType="VARCHAR" property="orgId" />
+    <result column="DEVICE_TYPE" jdbcType="VARCHAR" property="deviceType" />
+    <result column="DEVICE_BRAND" jdbcType="VARCHAR" property="deviceBrand" />
+    <result column="MANUFACTURE_SN" jdbcType="VARCHAR" property="manufactureSn" />
+    <result column="SOFTWARE_VERSION" jdbcType="VARCHAR" property="softwareVersion" />
+    <result column="NETWORK_TYPE" jdbcType="CHAR" property="networkType" />
+    <result column="SAFE_CONNECT_MEANS" jdbcType="CHAR" property="safeConnectMeans" />
+    <result column="DEVICE_IP" jdbcType="VARCHAR" property="deviceIp" />
+    <result column="DEVICE_PORT" jdbcType="DECIMAL" property="devicePort" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="SIM_NBR" jdbcType="VARCHAR" property="simNbr" />
+    <result column="INSTALL_DATE" jdbcType="TIMESTAMP" property="installDate" />
+    <result column="INSTALL_BY" jdbcType="VARCHAR" property="installBy" />
+    <result column="MOUNTING_FACILITY_TYPE" jdbcType="CHAR" property="mountingFacilityType" />
+    <result column="ENABLE_UPDATE_DATE" jdbcType="TIMESTAMP" property="enableUpdateDate" />
+    <result column="USE_STATUS_FLAG" jdbcType="CHAR" property="useStatusFlag" />
+    <result column="LONGITUDE" jdbcType="DECIMAL" property="longitude" />
+    <result column="LATITUDE" jdbcType="DECIMAL" property="latitude" />
+    <result column="STATUS_TYPE" jdbcType="VARCHAR" property="statusType" />
+    <result column="STATUS_UPDATE_TIME" jdbcType="TIMESTAMP" property="statusUpdateTime" />
+    <result column="SYNC_STATUS" jdbcType="CHAR" property="syncStatus" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="POWER_TYPE" jdbcType="CHAR" property="powerType" />
+    <result column="TRANSMISSION_MODE" jdbcType="CHAR" property="transmissionMode" />
+    <result column="BANDWIDTH" jdbcType="VARCHAR" property="bandwidth" />
+    <result column="OWNERSHIP" jdbcType="CHAR" property="ownership" />
+    <result column="SITE_ID" jdbcType="VARCHAR" property="siteId" />
+    <result column="SECTION_ID_LIST" jdbcType="VARCHAR" property="sectionIdList" />
+    <result column="COLLECTION_TYPE" jdbcType="CHAR" property="collectionType" />
+    <result column="ORG_PRIVILEGE_CODE" jdbcType="VARCHAR" property="orgPrivilegeCode" />
+    <result column="CONTRACTOR_ID" jdbcType="VARCHAR" property="contractorId" />
+    <result column="ARCHITECTURE" jdbcType="CHAR" property="architecture" />
+    <result column="SERVER_PLAT_ID" jdbcType="VARCHAR" property="serverPlatId" />
+    <result column="VERIFICATION_MARK" jdbcType="VARCHAR" property="verificationMark" />
+    <result column="LINE_STATISTICS_MARK" jdbcType="VARCHAR" property="lineStatisticsMark" />
+    <result column="DEVICE_KEY" jdbcType="VARCHAR" property="deviceKey" />
+    <result column="DEVICE_STOP_END_TIME" jdbcType="TIMESTAMP" property="deviceStopEndTime" />
+    <result column="SYNC_MARKUP" jdbcType="CHAR" property="syncMarkup" />
+    <result column="INFO_CHECK" jdbcType="VARCHAR" property="infoCheck" />
+    <result column="INFO_CHECK_DESC" jdbcType="VARCHAR" property="infoCheckDesc" />
+    <result column="NET_CONTRACTOR" jdbcType="CHAR" property="netContractor" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    DEVICE_ID, DEVICE_SYS_MODEL_ID, CONTRACT_ID, DEVICE_SYS_NBR, DEVICE_NAME, ORG_ID, 
+    DEVICE_TYPE, DEVICE_BRAND, MANUFACTURE_SN, SOFTWARE_VERSION, NETWORK_TYPE, SAFE_CONNECT_MEANS, 
+    DEVICE_IP, DEVICE_PORT, USER_NAME, PASSWORD, SIM_NBR, INSTALL_DATE, INSTALL_BY, MOUNTING_FACILITY_TYPE, 
+    ENABLE_UPDATE_DATE, USE_STATUS_FLAG, LONGITUDE, LATITUDE, STATUS_TYPE, STATUS_UPDATE_TIME, 
+    SYNC_STATUS, CREATE_BY, CREATE_TIME, UPDATE_BY, UPDATE_TIME, REMARK, POWER_TYPE, 
+    TRANSMISSION_MODE, BANDWIDTH, OWNERSHIP, SITE_ID, SECTION_ID_LIST, COLLECTION_TYPE, 
+    ORG_PRIVILEGE_CODE, CONTRACTOR_ID, ARCHITECTURE, SERVER_PLAT_ID, VERIFICATION_MARK, 
+    LINE_STATISTICS_MARK, DEVICE_KEY, DEVICE_STOP_END_TIME, SYNC_MARKUP, INFO_CHECK, 
+    INFO_CHECK_DESC, NET_CONTRACTOR
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_DEVICE_SYS
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_DEVICE_SYS
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    insert into T_DEVICE_SYS (DEVICE_ID, DEVICE_SYS_MODEL_ID, CONTRACT_ID, 
+      DEVICE_SYS_NBR, DEVICE_NAME, ORG_ID, 
+      DEVICE_TYPE, DEVICE_BRAND, MANUFACTURE_SN, 
+      SOFTWARE_VERSION, NETWORK_TYPE, SAFE_CONNECT_MEANS, 
+      DEVICE_IP, DEVICE_PORT, USER_NAME, 
+      PASSWORD, SIM_NBR, INSTALL_DATE, 
+      INSTALL_BY, MOUNTING_FACILITY_TYPE, ENABLE_UPDATE_DATE, 
+      USE_STATUS_FLAG, LONGITUDE, LATITUDE, 
+      STATUS_TYPE, STATUS_UPDATE_TIME, SYNC_STATUS, 
+      CREATE_BY, CREATE_TIME, UPDATE_BY, 
+      UPDATE_TIME, REMARK, POWER_TYPE, 
+      TRANSMISSION_MODE, BANDWIDTH, OWNERSHIP, 
+      SITE_ID, SECTION_ID_LIST, COLLECTION_TYPE, 
+      ORG_PRIVILEGE_CODE, CONTRACTOR_ID, ARCHITECTURE, 
+      SERVER_PLAT_ID, VERIFICATION_MARK, LINE_STATISTICS_MARK, 
+      DEVICE_KEY, DEVICE_STOP_END_TIME, SYNC_MARKUP, 
+      INFO_CHECK, INFO_CHECK_DESC, NET_CONTRACTOR
+      )
+    values (#{deviceId,jdbcType=VARCHAR}, #{deviceSysModelId,jdbcType=VARCHAR}, #{contractId,jdbcType=VARCHAR}, 
+      #{deviceSysNbr,jdbcType=VARCHAR}, #{deviceName,jdbcType=VARCHAR}, #{orgId,jdbcType=VARCHAR}, 
+      #{deviceType,jdbcType=VARCHAR}, #{deviceBrand,jdbcType=VARCHAR}, #{manufactureSn,jdbcType=VARCHAR}, 
+      #{softwareVersion,jdbcType=VARCHAR}, #{networkType,jdbcType=CHAR}, #{safeConnectMeans,jdbcType=CHAR}, 
+      #{deviceIp,jdbcType=VARCHAR}, #{devicePort,jdbcType=DECIMAL}, #{userName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{simNbr,jdbcType=VARCHAR}, #{installDate,jdbcType=TIMESTAMP}, 
+      #{installBy,jdbcType=VARCHAR}, #{mountingFacilityType,jdbcType=CHAR}, #{enableUpdateDate,jdbcType=TIMESTAMP}, 
+      #{useStatusFlag,jdbcType=CHAR}, #{longitude,jdbcType=DECIMAL}, #{latitude,jdbcType=DECIMAL}, 
+      #{statusType,jdbcType=VARCHAR}, #{statusUpdateTime,jdbcType=TIMESTAMP}, #{syncStatus,jdbcType=CHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, #{powerType,jdbcType=CHAR}, 
+      #{transmissionMode,jdbcType=CHAR}, #{bandwidth,jdbcType=VARCHAR}, #{ownership,jdbcType=CHAR}, 
+      #{siteId,jdbcType=VARCHAR}, #{sectionIdList,jdbcType=VARCHAR}, #{collectionType,jdbcType=CHAR}, 
+      #{orgPrivilegeCode,jdbcType=VARCHAR}, #{contractorId,jdbcType=VARCHAR}, #{architecture,jdbcType=CHAR}, 
+      #{serverPlatId,jdbcType=VARCHAR}, #{verificationMark,jdbcType=VARCHAR}, #{lineStatisticsMark,jdbcType=VARCHAR}, 
+      #{deviceKey,jdbcType=VARCHAR}, #{deviceStopEndTime,jdbcType=TIMESTAMP}, #{syncMarkup,jdbcType=CHAR}, 
+      #{infoCheck,jdbcType=VARCHAR}, #{infoCheckDesc,jdbcType=VARCHAR}, #{netContractor,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    insert into T_DEVICE_SYS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        DEVICE_ID,
+      </if>
+      <if test="deviceSysModelId != null">
+        DEVICE_SYS_MODEL_ID,
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID,
+      </if>
+      <if test="deviceSysNbr != null">
+        DEVICE_SYS_NBR,
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME,
+      </if>
+      <if test="orgId != null">
+        ORG_ID,
+      </if>
+      <if test="deviceType != null">
+        DEVICE_TYPE,
+      </if>
+      <if test="deviceBrand != null">
+        DEVICE_BRAND,
+      </if>
+      <if test="manufactureSn != null">
+        MANUFACTURE_SN,
+      </if>
+      <if test="softwareVersion != null">
+        SOFTWARE_VERSION,
+      </if>
+      <if test="networkType != null">
+        NETWORK_TYPE,
+      </if>
+      <if test="safeConnectMeans != null">
+        SAFE_CONNECT_MEANS,
+      </if>
+      <if test="deviceIp != null">
+        DEVICE_IP,
+      </if>
+      <if test="devicePort != null">
+        DEVICE_PORT,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="simNbr != null">
+        SIM_NBR,
+      </if>
+      <if test="installDate != null">
+        INSTALL_DATE,
+      </if>
+      <if test="installBy != null">
+        INSTALL_BY,
+      </if>
+      <if test="mountingFacilityType != null">
+        MOUNTING_FACILITY_TYPE,
+      </if>
+      <if test="enableUpdateDate != null">
+        ENABLE_UPDATE_DATE,
+      </if>
+      <if test="useStatusFlag != null">
+        USE_STATUS_FLAG,
+      </if>
+      <if test="longitude != null">
+        LONGITUDE,
+      </if>
+      <if test="latitude != null">
+        LATITUDE,
+      </if>
+      <if test="statusType != null">
+        STATUS_TYPE,
+      </if>
+      <if test="statusUpdateTime != null">
+        STATUS_UPDATE_TIME,
+      </if>
+      <if test="syncStatus != null">
+        SYNC_STATUS,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="powerType != null">
+        POWER_TYPE,
+      </if>
+      <if test="transmissionMode != null">
+        TRANSMISSION_MODE,
+      </if>
+      <if test="bandwidth != null">
+        BANDWIDTH,
+      </if>
+      <if test="ownership != null">
+        OWNERSHIP,
+      </if>
+      <if test="siteId != null">
+        SITE_ID,
+      </if>
+      <if test="sectionIdList != null">
+        SECTION_ID_LIST,
+      </if>
+      <if test="collectionType != null">
+        COLLECTION_TYPE,
+      </if>
+      <if test="orgPrivilegeCode != null">
+        ORG_PRIVILEGE_CODE,
+      </if>
+      <if test="contractorId != null">
+        CONTRACTOR_ID,
+      </if>
+      <if test="architecture != null">
+        ARCHITECTURE,
+      </if>
+      <if test="serverPlatId != null">
+        SERVER_PLAT_ID,
+      </if>
+      <if test="verificationMark != null">
+        VERIFICATION_MARK,
+      </if>
+      <if test="lineStatisticsMark != null">
+        LINE_STATISTICS_MARK,
+      </if>
+      <if test="deviceKey != null">
+        DEVICE_KEY,
+      </if>
+      <if test="deviceStopEndTime != null">
+        DEVICE_STOP_END_TIME,
+      </if>
+      <if test="syncMarkup != null">
+        SYNC_MARKUP,
+      </if>
+      <if test="infoCheck != null">
+        INFO_CHECK,
+      </if>
+      <if test="infoCheckDesc != null">
+        INFO_CHECK_DESC,
+      </if>
+      <if test="netContractor != null">
+        NET_CONTRACTOR,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysModelId != null">
+        #{deviceSysModelId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysNbr != null">
+        #{deviceSysNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null">
+        #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceBrand != null">
+        #{deviceBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactureSn != null">
+        #{manufactureSn,jdbcType=VARCHAR},
+      </if>
+      <if test="softwareVersion != null">
+        #{softwareVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="networkType != null">
+        #{networkType,jdbcType=CHAR},
+      </if>
+      <if test="safeConnectMeans != null">
+        #{safeConnectMeans,jdbcType=CHAR},
+      </if>
+      <if test="deviceIp != null">
+        #{deviceIp,jdbcType=VARCHAR},
+      </if>
+      <if test="devicePort != null">
+        #{devicePort,jdbcType=DECIMAL},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="simNbr != null">
+        #{simNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="installDate != null">
+        #{installDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="installBy != null">
+        #{installBy,jdbcType=VARCHAR},
+      </if>
+      <if test="mountingFacilityType != null">
+        #{mountingFacilityType,jdbcType=CHAR},
+      </if>
+      <if test="enableUpdateDate != null">
+        #{enableUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="useStatusFlag != null">
+        #{useStatusFlag,jdbcType=CHAR},
+      </if>
+      <if test="longitude != null">
+        #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null">
+        #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="statusType != null">
+        #{statusType,jdbcType=VARCHAR},
+      </if>
+      <if test="statusUpdateTime != null">
+        #{statusUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncStatus != null">
+        #{syncStatus,jdbcType=CHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="powerType != null">
+        #{powerType,jdbcType=CHAR},
+      </if>
+      <if test="transmissionMode != null">
+        #{transmissionMode,jdbcType=CHAR},
+      </if>
+      <if test="bandwidth != null">
+        #{bandwidth,jdbcType=VARCHAR},
+      </if>
+      <if test="ownership != null">
+        #{ownership,jdbcType=CHAR},
+      </if>
+      <if test="siteId != null">
+        #{siteId,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionIdList != null">
+        #{sectionIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionType != null">
+        #{collectionType,jdbcType=CHAR},
+      </if>
+      <if test="orgPrivilegeCode != null">
+        #{orgPrivilegeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contractorId != null">
+        #{contractorId,jdbcType=VARCHAR},
+      </if>
+      <if test="architecture != null">
+        #{architecture,jdbcType=CHAR},
+      </if>
+      <if test="serverPlatId != null">
+        #{serverPlatId,jdbcType=VARCHAR},
+      </if>
+      <if test="verificationMark != null">
+        #{verificationMark,jdbcType=VARCHAR},
+      </if>
+      <if test="lineStatisticsMark != null">
+        #{lineStatisticsMark,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceKey != null">
+        #{deviceKey,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceStopEndTime != null">
+        #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncMarkup != null">
+        #{syncMarkup,jdbcType=CHAR},
+      </if>
+      <if test="infoCheck != null">
+        #{infoCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="infoCheckDesc != null">
+        #{infoCheckDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="netContractor != null">
+        #{netContractor,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    update T_DEVICE_SYS
+    <set>
+      <if test="deviceSysModelId != null">
+        DEVICE_SYS_MODEL_ID = #{deviceSysModelId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysNbr != null">
+        DEVICE_SYS_NBR = #{deviceSysNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        ORG_ID = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null">
+        DEVICE_TYPE = #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceBrand != null">
+        DEVICE_BRAND = #{deviceBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactureSn != null">
+        MANUFACTURE_SN = #{manufactureSn,jdbcType=VARCHAR},
+      </if>
+      <if test="softwareVersion != null">
+        SOFTWARE_VERSION = #{softwareVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="networkType != null">
+        NETWORK_TYPE = #{networkType,jdbcType=CHAR},
+      </if>
+      <if test="safeConnectMeans != null">
+        SAFE_CONNECT_MEANS = #{safeConnectMeans,jdbcType=CHAR},
+      </if>
+      <if test="deviceIp != null">
+        DEVICE_IP = #{deviceIp,jdbcType=VARCHAR},
+      </if>
+      <if test="devicePort != null">
+        DEVICE_PORT = #{devicePort,jdbcType=DECIMAL},
+      </if>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="simNbr != null">
+        SIM_NBR = #{simNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="installDate != null">
+        INSTALL_DATE = #{installDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="installBy != null">
+        INSTALL_BY = #{installBy,jdbcType=VARCHAR},
+      </if>
+      <if test="mountingFacilityType != null">
+        MOUNTING_FACILITY_TYPE = #{mountingFacilityType,jdbcType=CHAR},
+      </if>
+      <if test="enableUpdateDate != null">
+        ENABLE_UPDATE_DATE = #{enableUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="useStatusFlag != null">
+        USE_STATUS_FLAG = #{useStatusFlag,jdbcType=CHAR},
+      </if>
+      <if test="longitude != null">
+        LONGITUDE = #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null">
+        LATITUDE = #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="statusType != null">
+        STATUS_TYPE = #{statusType,jdbcType=VARCHAR},
+      </if>
+      <if test="statusUpdateTime != null">
+        STATUS_UPDATE_TIME = #{statusUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncStatus != null">
+        SYNC_STATUS = #{syncStatus,jdbcType=CHAR},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="powerType != null">
+        POWER_TYPE = #{powerType,jdbcType=CHAR},
+      </if>
+      <if test="transmissionMode != null">
+        TRANSMISSION_MODE = #{transmissionMode,jdbcType=CHAR},
+      </if>
+      <if test="bandwidth != null">
+        BANDWIDTH = #{bandwidth,jdbcType=VARCHAR},
+      </if>
+      <if test="ownership != null">
+        OWNERSHIP = #{ownership,jdbcType=CHAR},
+      </if>
+      <if test="siteId != null">
+        SITE_ID = #{siteId,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionIdList != null">
+        SECTION_ID_LIST = #{sectionIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionType != null">
+        COLLECTION_TYPE = #{collectionType,jdbcType=CHAR},
+      </if>
+      <if test="orgPrivilegeCode != null">
+        ORG_PRIVILEGE_CODE = #{orgPrivilegeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contractorId != null">
+        CONTRACTOR_ID = #{contractorId,jdbcType=VARCHAR},
+      </if>
+      <if test="architecture != null">
+        ARCHITECTURE = #{architecture,jdbcType=CHAR},
+      </if>
+      <if test="serverPlatId != null">
+        SERVER_PLAT_ID = #{serverPlatId,jdbcType=VARCHAR},
+      </if>
+      <if test="verificationMark != null">
+        VERIFICATION_MARK = #{verificationMark,jdbcType=VARCHAR},
+      </if>
+      <if test="lineStatisticsMark != null">
+        LINE_STATISTICS_MARK = #{lineStatisticsMark,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceKey != null">
+        DEVICE_KEY = #{deviceKey,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceStopEndTime != null">
+        DEVICE_STOP_END_TIME = #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncMarkup != null">
+        SYNC_MARKUP = #{syncMarkup,jdbcType=CHAR},
+      </if>
+      <if test="infoCheck != null">
+        INFO_CHECK = #{infoCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="infoCheckDesc != null">
+        INFO_CHECK_DESC = #{infoCheckDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="netContractor != null">
+        NET_CONTRACTOR = #{netContractor,jdbcType=CHAR},
+      </if>
+    </set>
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    update T_DEVICE_SYS
+    set DEVICE_SYS_MODEL_ID = #{deviceSysModelId,jdbcType=VARCHAR},
+      CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      DEVICE_SYS_NBR = #{deviceSysNbr,jdbcType=VARCHAR},
+      DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      ORG_ID = #{orgId,jdbcType=VARCHAR},
+      DEVICE_TYPE = #{deviceType,jdbcType=VARCHAR},
+      DEVICE_BRAND = #{deviceBrand,jdbcType=VARCHAR},
+      MANUFACTURE_SN = #{manufactureSn,jdbcType=VARCHAR},
+      SOFTWARE_VERSION = #{softwareVersion,jdbcType=VARCHAR},
+      NETWORK_TYPE = #{networkType,jdbcType=CHAR},
+      SAFE_CONNECT_MEANS = #{safeConnectMeans,jdbcType=CHAR},
+      DEVICE_IP = #{deviceIp,jdbcType=VARCHAR},
+      DEVICE_PORT = #{devicePort,jdbcType=DECIMAL},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      SIM_NBR = #{simNbr,jdbcType=VARCHAR},
+      INSTALL_DATE = #{installDate,jdbcType=TIMESTAMP},
+      INSTALL_BY = #{installBy,jdbcType=VARCHAR},
+      MOUNTING_FACILITY_TYPE = #{mountingFacilityType,jdbcType=CHAR},
+      ENABLE_UPDATE_DATE = #{enableUpdateDate,jdbcType=TIMESTAMP},
+      USE_STATUS_FLAG = #{useStatusFlag,jdbcType=CHAR},
+      LONGITUDE = #{longitude,jdbcType=DECIMAL},
+      LATITUDE = #{latitude,jdbcType=DECIMAL},
+      STATUS_TYPE = #{statusType,jdbcType=VARCHAR},
+      STATUS_UPDATE_TIME = #{statusUpdateTime,jdbcType=TIMESTAMP},
+      SYNC_STATUS = #{syncStatus,jdbcType=CHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      POWER_TYPE = #{powerType,jdbcType=CHAR},
+      TRANSMISSION_MODE = #{transmissionMode,jdbcType=CHAR},
+      BANDWIDTH = #{bandwidth,jdbcType=VARCHAR},
+      OWNERSHIP = #{ownership,jdbcType=CHAR},
+      SITE_ID = #{siteId,jdbcType=VARCHAR},
+      SECTION_ID_LIST = #{sectionIdList,jdbcType=VARCHAR},
+      COLLECTION_TYPE = #{collectionType,jdbcType=CHAR},
+      ORG_PRIVILEGE_CODE = #{orgPrivilegeCode,jdbcType=VARCHAR},
+      CONTRACTOR_ID = #{contractorId,jdbcType=VARCHAR},
+      ARCHITECTURE = #{architecture,jdbcType=CHAR},
+      SERVER_PLAT_ID = #{serverPlatId,jdbcType=VARCHAR},
+      VERIFICATION_MARK = #{verificationMark,jdbcType=VARCHAR},
+      LINE_STATISTICS_MARK = #{lineStatisticsMark,jdbcType=VARCHAR},
+      DEVICE_KEY = #{deviceKey,jdbcType=VARCHAR},
+      DEVICE_STOP_END_TIME = #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      SYNC_MARKUP = #{syncMarkup,jdbcType=CHAR},
+      INFO_CHECK = #{infoCheck,jdbcType=VARCHAR},
+      INFO_CHECK_DESC = #{infoCheckDesc,jdbcType=VARCHAR},
+      NET_CONTRACTOR = #{netContractor,jdbcType=CHAR}
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="cy.its.trafficSituation.domain.models.DeviceSys">
+    <id column="DEVICE_ID" jdbcType="VARCHAR" property="deviceId" />
+    <result column="DEVICE_SYS_MODEL_ID" jdbcType="VARCHAR" property="deviceSysModelId" />
+    <result column="CONTRACT_ID" jdbcType="VARCHAR" property="contractId" />
+    <result column="DEVICE_SYS_NBR" jdbcType="VARCHAR" property="deviceSysNbr" />
+    <result column="DEVICE_NAME" jdbcType="VARCHAR" property="deviceName" />
+    <result column="ORG_ID" jdbcType="VARCHAR" property="orgId" />
+    <result column="DEVICE_TYPE" jdbcType="VARCHAR" property="deviceType" />
+    <result column="DEVICE_BRAND" jdbcType="VARCHAR" property="deviceBrand" />
+    <result column="MANUFACTURE_SN" jdbcType="VARCHAR" property="manufactureSn" />
+    <result column="SOFTWARE_VERSION" jdbcType="VARCHAR" property="softwareVersion" />
+    <result column="NETWORK_TYPE" jdbcType="CHAR" property="networkType" />
+    <result column="SAFE_CONNECT_MEANS" jdbcType="CHAR" property="safeConnectMeans" />
+    <result column="DEVICE_IP" jdbcType="VARCHAR" property="deviceIp" />
+    <result column="DEVICE_PORT" jdbcType="DECIMAL" property="devicePort" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="SIM_NBR" jdbcType="VARCHAR" property="simNbr" />
+    <result column="INSTALL_DATE" jdbcType="TIMESTAMP" property="installDate" />
+    <result column="INSTALL_BY" jdbcType="VARCHAR" property="installBy" />
+    <result column="MOUNTING_FACILITY_TYPE" jdbcType="CHAR" property="mountingFacilityType" />
+    <result column="ENABLE_UPDATE_DATE" jdbcType="TIMESTAMP" property="enableUpdateDate" />
+    <result column="USE_STATUS_FLAG" jdbcType="CHAR" property="useStatusFlag" />
+    <result column="LONGITUDE" jdbcType="DECIMAL" property="longitude" />
+    <result column="LATITUDE" jdbcType="DECIMAL" property="latitude" />
+    <result column="STATUS_TYPE" jdbcType="VARCHAR" property="statusType" />
+    <result column="STATUS_UPDATE_TIME" jdbcType="TIMESTAMP" property="statusUpdateTime" />
+    <result column="SYNC_STATUS" jdbcType="CHAR" property="syncStatus" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+    <result column="POWER_TYPE" jdbcType="CHAR" property="powerType" />
+    <result column="TRANSMISSION_MODE" jdbcType="CHAR" property="transmissionMode" />
+    <result column="BANDWIDTH" jdbcType="VARCHAR" property="bandwidth" />
+    <result column="OWNERSHIP" jdbcType="CHAR" property="ownership" />
+    <result column="SITE_ID" jdbcType="VARCHAR" property="siteId" />
+    <result column="SECTION_ID_LIST" jdbcType="VARCHAR" property="sectionIdList" />
+    <result column="COLLECTION_TYPE" jdbcType="CHAR" property="collectionType" />
+    <result column="ORG_PRIVILEGE_CODE" jdbcType="VARCHAR" property="orgPrivilegeCode" />
+    <result column="CONTRACTOR_ID" jdbcType="VARCHAR" property="contractorId" />
+    <result column="ARCHITECTURE" jdbcType="CHAR" property="architecture" />
+    <result column="SERVER_PLAT_ID" jdbcType="VARCHAR" property="serverPlatId" />
+    <result column="VERIFICATION_MARK" jdbcType="VARCHAR" property="verificationMark" />
+    <result column="LINE_STATISTICS_MARK" jdbcType="VARCHAR" property="lineStatisticsMark" />
+    <result column="DEVICE_KEY" jdbcType="VARCHAR" property="deviceKey" />
+    <result column="DEVICE_STOP_END_TIME" jdbcType="TIMESTAMP" property="deviceStopEndTime" />
+    <result column="SYNC_MARKUP" jdbcType="CHAR" property="syncMarkup" />
+    <result column="INFO_CHECK" jdbcType="VARCHAR" property="infoCheck" />
+    <result column="INFO_CHECK_DESC" jdbcType="VARCHAR" property="infoCheckDesc" />
+    <result column="NET_CONTRACTOR" jdbcType="CHAR" property="netContractor" />
+    <result column="ITMS2_CAMERA_ID" jdbcType="VARCHAR" property="itms2CameraId" />
+    <result column="ITMS2_DEVICE_ID" jdbcType="VARCHAR" property="itms2DeviceId" />
+    <result column="POWER_OFF_NETWORK" jdbcType="CHAR" property="powerOffNetwork" />
+    <result column="ITMS2_CAMERA_SN" jdbcType="VARCHAR" property="itms2CameraSn" />
+    <result column="TO_TABLE" jdbcType="VARCHAR" property="toTable" />
+    <result column="ITMS2_ISGUN" jdbcType="VARCHAR" property="itms2Isgun" />
+    <result column="POSITION" jdbcType="VARCHAR" property="position" />
+    <result column="YUSHI_SN" jdbcType="VARCHAR" property="yushiSn" />
+    <result column="S_STATUS_TIME" jdbcType="TIMESTAMP" property="sStatusTime" />
+    <result column="S_FAULT_DETAILS" jdbcType="VARCHAR" property="sFaultDetails" />
+    <result column="S_COMPONENT_STATUS_RESULTS" jdbcType="VARCHAR" property="sComponentStatusResults" />
+    <result column="S_DEVICE_CUR_TIME" jdbcType="TIMESTAMP" property="sDeviceCurTime" />
+    <result column="S_TIME_DIFF" jdbcType="DECIMAL" property="sTimeDiff" />
+    <result column="S_LAST_UPLOAD_TIME" jdbcType="TIMESTAMP" property="sLastUploadTime" />
+    <result column="S_LATEST_DATA_TIME" jdbcType="TIMESTAMP" property="sLatestDataTime" />
+    <result column="S_MAP_FAULT_CODE" jdbcType="VARCHAR" property="sMapFaultCode" />
+    <result column="S_MAP_DATA_RECV_TIME" jdbcType="VARCHAR" property="sMapDataRecvTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    DEVICE_ID, DEVICE_SYS_MODEL_ID, CONTRACT_ID, DEVICE_SYS_NBR, DEVICE_NAME, ORG_ID, 
+    DEVICE_TYPE, DEVICE_BRAND, MANUFACTURE_SN, SOFTWARE_VERSION, NETWORK_TYPE, SAFE_CONNECT_MEANS, 
+    DEVICE_IP, DEVICE_PORT, USER_NAME, PASSWORD, SIM_NBR, INSTALL_DATE, INSTALL_BY, MOUNTING_FACILITY_TYPE, 
+    ENABLE_UPDATE_DATE, USE_STATUS_FLAG, LONGITUDE, LATITUDE, STATUS_TYPE, STATUS_UPDATE_TIME, 
+    SYNC_STATUS, CREATE_BY, CREATE_TIME, UPDATE_BY, UPDATE_TIME, REMARK, POWER_TYPE, 
+    TRANSMISSION_MODE, BANDWIDTH, OWNERSHIP, SITE_ID, SECTION_ID_LIST, COLLECTION_TYPE, 
+    ORG_PRIVILEGE_CODE, CONTRACTOR_ID, ARCHITECTURE, SERVER_PLAT_ID, VERIFICATION_MARK, 
+    LINE_STATISTICS_MARK, DEVICE_KEY, DEVICE_STOP_END_TIME, SYNC_MARKUP, INFO_CHECK, 
+    INFO_CHECK_DESC, NET_CONTRACTOR, ITMS2_CAMERA_ID, ITMS2_DEVICE_ID, POWER_OFF_NETWORK, 
+    ITMS2_CAMERA_SN, TO_TABLE, ITMS2_ISGUN, POSITION, YUSHI_SN, S_STATUS_TIME, S_FAULT_DETAILS, 
+    S_COMPONENT_STATUS_RESULTS, S_DEVICE_CUR_TIME, S_TIME_DIFF, S_LAST_UPLOAD_TIME, S_LATEST_DATA_TIME, 
+    S_MAP_FAULT_CODE, S_MAP_DATA_RECV_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from T_DEVICE_SYS
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from T_DEVICE_SYS
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    insert into T_DEVICE_SYS (DEVICE_ID, DEVICE_SYS_MODEL_ID, CONTRACT_ID, 
+      DEVICE_SYS_NBR, DEVICE_NAME, ORG_ID, 
+      DEVICE_TYPE, DEVICE_BRAND, MANUFACTURE_SN, 
+      SOFTWARE_VERSION, NETWORK_TYPE, SAFE_CONNECT_MEANS, 
+      DEVICE_IP, DEVICE_PORT, USER_NAME, 
+      PASSWORD, SIM_NBR, INSTALL_DATE, 
+      INSTALL_BY, MOUNTING_FACILITY_TYPE, ENABLE_UPDATE_DATE, 
+      USE_STATUS_FLAG, LONGITUDE, LATITUDE, 
+      STATUS_TYPE, STATUS_UPDATE_TIME, SYNC_STATUS, 
+      CREATE_BY, CREATE_TIME, UPDATE_BY, 
+      UPDATE_TIME, REMARK, POWER_TYPE, 
+      TRANSMISSION_MODE, BANDWIDTH, OWNERSHIP, 
+      SITE_ID, SECTION_ID_LIST, COLLECTION_TYPE, 
+      ORG_PRIVILEGE_CODE, CONTRACTOR_ID, ARCHITECTURE, 
+      SERVER_PLAT_ID, VERIFICATION_MARK, LINE_STATISTICS_MARK, 
+      DEVICE_KEY, DEVICE_STOP_END_TIME, SYNC_MARKUP, 
+      INFO_CHECK, INFO_CHECK_DESC, NET_CONTRACTOR, 
+      ITMS2_CAMERA_ID, ITMS2_DEVICE_ID, POWER_OFF_NETWORK, 
+      ITMS2_CAMERA_SN, TO_TABLE, ITMS2_ISGUN, 
+      POSITION, YUSHI_SN, S_STATUS_TIME, 
+      S_FAULT_DETAILS, S_COMPONENT_STATUS_RESULTS, 
+      S_DEVICE_CUR_TIME, S_TIME_DIFF, S_LAST_UPLOAD_TIME, 
+      S_LATEST_DATA_TIME, S_MAP_FAULT_CODE, S_MAP_DATA_RECV_TIME
+      )
+    values (#{deviceId,jdbcType=VARCHAR}, #{deviceSysModelId,jdbcType=VARCHAR}, #{contractId,jdbcType=VARCHAR}, 
+      #{deviceSysNbr,jdbcType=VARCHAR}, #{deviceName,jdbcType=VARCHAR}, #{orgId,jdbcType=VARCHAR}, 
+      #{deviceType,jdbcType=VARCHAR}, #{deviceBrand,jdbcType=VARCHAR}, #{manufactureSn,jdbcType=VARCHAR}, 
+      #{softwareVersion,jdbcType=VARCHAR}, #{networkType,jdbcType=CHAR}, #{safeConnectMeans,jdbcType=CHAR}, 
+      #{deviceIp,jdbcType=VARCHAR}, #{devicePort,jdbcType=DECIMAL}, #{userName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{simNbr,jdbcType=VARCHAR}, #{installDate,jdbcType=TIMESTAMP}, 
+      #{installBy,jdbcType=VARCHAR}, #{mountingFacilityType,jdbcType=CHAR}, #{enableUpdateDate,jdbcType=TIMESTAMP}, 
+      #{useStatusFlag,jdbcType=CHAR}, #{longitude,jdbcType=DECIMAL}, #{latitude,jdbcType=DECIMAL}, 
+      #{statusType,jdbcType=VARCHAR}, #{statusUpdateTime,jdbcType=TIMESTAMP}, #{syncStatus,jdbcType=CHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, #{powerType,jdbcType=CHAR}, 
+      #{transmissionMode,jdbcType=CHAR}, #{bandwidth,jdbcType=VARCHAR}, #{ownership,jdbcType=CHAR}, 
+      #{siteId,jdbcType=VARCHAR}, #{sectionIdList,jdbcType=VARCHAR}, #{collectionType,jdbcType=CHAR}, 
+      #{orgPrivilegeCode,jdbcType=VARCHAR}, #{contractorId,jdbcType=VARCHAR}, #{architecture,jdbcType=CHAR}, 
+      #{serverPlatId,jdbcType=VARCHAR}, #{verificationMark,jdbcType=VARCHAR}, #{lineStatisticsMark,jdbcType=VARCHAR}, 
+      #{deviceKey,jdbcType=VARCHAR}, #{deviceStopEndTime,jdbcType=TIMESTAMP}, #{syncMarkup,jdbcType=CHAR}, 
+      #{infoCheck,jdbcType=VARCHAR}, #{infoCheckDesc,jdbcType=VARCHAR}, #{netContractor,jdbcType=CHAR}, 
+      #{itms2CameraId,jdbcType=VARCHAR}, #{itms2DeviceId,jdbcType=VARCHAR}, #{powerOffNetwork,jdbcType=CHAR}, 
+      #{itms2CameraSn,jdbcType=VARCHAR}, #{toTable,jdbcType=VARCHAR}, #{itms2Isgun,jdbcType=VARCHAR}, 
+      #{position,jdbcType=VARCHAR}, #{yushiSn,jdbcType=VARCHAR}, #{sStatusTime,jdbcType=TIMESTAMP}, 
+      #{sFaultDetails,jdbcType=VARCHAR}, #{sComponentStatusResults,jdbcType=VARCHAR}, 
+      #{sDeviceCurTime,jdbcType=TIMESTAMP}, #{sTimeDiff,jdbcType=DECIMAL}, #{sLastUploadTime,jdbcType=TIMESTAMP}, 
+      #{sLatestDataTime,jdbcType=TIMESTAMP}, #{sMapFaultCode,jdbcType=VARCHAR}, #{sMapDataRecvTime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    insert into T_DEVICE_SYS
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        DEVICE_ID,
+      </if>
+      <if test="deviceSysModelId != null">
+        DEVICE_SYS_MODEL_ID,
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID,
+      </if>
+      <if test="deviceSysNbr != null">
+        DEVICE_SYS_NBR,
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME,
+      </if>
+      <if test="orgId != null">
+        ORG_ID,
+      </if>
+      <if test="deviceType != null">
+        DEVICE_TYPE,
+      </if>
+      <if test="deviceBrand != null">
+        DEVICE_BRAND,
+      </if>
+      <if test="manufactureSn != null">
+        MANUFACTURE_SN,
+      </if>
+      <if test="softwareVersion != null">
+        SOFTWARE_VERSION,
+      </if>
+      <if test="networkType != null">
+        NETWORK_TYPE,
+      </if>
+      <if test="safeConnectMeans != null">
+        SAFE_CONNECT_MEANS,
+      </if>
+      <if test="deviceIp != null">
+        DEVICE_IP,
+      </if>
+      <if test="devicePort != null">
+        DEVICE_PORT,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="simNbr != null">
+        SIM_NBR,
+      </if>
+      <if test="installDate != null">
+        INSTALL_DATE,
+      </if>
+      <if test="installBy != null">
+        INSTALL_BY,
+      </if>
+      <if test="mountingFacilityType != null">
+        MOUNTING_FACILITY_TYPE,
+      </if>
+      <if test="enableUpdateDate != null">
+        ENABLE_UPDATE_DATE,
+      </if>
+      <if test="useStatusFlag != null">
+        USE_STATUS_FLAG,
+      </if>
+      <if test="longitude != null">
+        LONGITUDE,
+      </if>
+      <if test="latitude != null">
+        LATITUDE,
+      </if>
+      <if test="statusType != null">
+        STATUS_TYPE,
+      </if>
+      <if test="statusUpdateTime != null">
+        STATUS_UPDATE_TIME,
+      </if>
+      <if test="syncStatus != null">
+        SYNC_STATUS,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+      <if test="powerType != null">
+        POWER_TYPE,
+      </if>
+      <if test="transmissionMode != null">
+        TRANSMISSION_MODE,
+      </if>
+      <if test="bandwidth != null">
+        BANDWIDTH,
+      </if>
+      <if test="ownership != null">
+        OWNERSHIP,
+      </if>
+      <if test="siteId != null">
+        SITE_ID,
+      </if>
+      <if test="sectionIdList != null">
+        SECTION_ID_LIST,
+      </if>
+      <if test="collectionType != null">
+        COLLECTION_TYPE,
+      </if>
+      <if test="orgPrivilegeCode != null">
+        ORG_PRIVILEGE_CODE,
+      </if>
+      <if test="contractorId != null">
+        CONTRACTOR_ID,
+      </if>
+      <if test="architecture != null">
+        ARCHITECTURE,
+      </if>
+      <if test="serverPlatId != null">
+        SERVER_PLAT_ID,
+      </if>
+      <if test="verificationMark != null">
+        VERIFICATION_MARK,
+      </if>
+      <if test="lineStatisticsMark != null">
+        LINE_STATISTICS_MARK,
+      </if>
+      <if test="deviceKey != null">
+        DEVICE_KEY,
+      </if>
+      <if test="deviceStopEndTime != null">
+        DEVICE_STOP_END_TIME,
+      </if>
+      <if test="syncMarkup != null">
+        SYNC_MARKUP,
+      </if>
+      <if test="infoCheck != null">
+        INFO_CHECK,
+      </if>
+      <if test="infoCheckDesc != null">
+        INFO_CHECK_DESC,
+      </if>
+      <if test="netContractor != null">
+        NET_CONTRACTOR,
+      </if>
+      <if test="itms2CameraId != null">
+        ITMS2_CAMERA_ID,
+      </if>
+      <if test="itms2DeviceId != null">
+        ITMS2_DEVICE_ID,
+      </if>
+      <if test="powerOffNetwork != null">
+        POWER_OFF_NETWORK,
+      </if>
+      <if test="itms2CameraSn != null">
+        ITMS2_CAMERA_SN,
+      </if>
+      <if test="toTable != null">
+        TO_TABLE,
+      </if>
+      <if test="itms2Isgun != null">
+        ITMS2_ISGUN,
+      </if>
+      <if test="position != null">
+        POSITION,
+      </if>
+      <if test="yushiSn != null">
+        YUSHI_SN,
+      </if>
+      <if test="sStatusTime != null">
+        S_STATUS_TIME,
+      </if>
+      <if test="sFaultDetails != null">
+        S_FAULT_DETAILS,
+      </if>
+      <if test="sComponentStatusResults != null">
+        S_COMPONENT_STATUS_RESULTS,
+      </if>
+      <if test="sDeviceCurTime != null">
+        S_DEVICE_CUR_TIME,
+      </if>
+      <if test="sTimeDiff != null">
+        S_TIME_DIFF,
+      </if>
+      <if test="sLastUploadTime != null">
+        S_LAST_UPLOAD_TIME,
+      </if>
+      <if test="sLatestDataTime != null">
+        S_LATEST_DATA_TIME,
+      </if>
+      <if test="sMapFaultCode != null">
+        S_MAP_FAULT_CODE,
+      </if>
+      <if test="sMapDataRecvTime != null">
+        S_MAP_DATA_RECV_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysModelId != null">
+        #{deviceSysModelId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysNbr != null">
+        #{deviceSysNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null">
+        #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceBrand != null">
+        #{deviceBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactureSn != null">
+        #{manufactureSn,jdbcType=VARCHAR},
+      </if>
+      <if test="softwareVersion != null">
+        #{softwareVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="networkType != null">
+        #{networkType,jdbcType=CHAR},
+      </if>
+      <if test="safeConnectMeans != null">
+        #{safeConnectMeans,jdbcType=CHAR},
+      </if>
+      <if test="deviceIp != null">
+        #{deviceIp,jdbcType=VARCHAR},
+      </if>
+      <if test="devicePort != null">
+        #{devicePort,jdbcType=DECIMAL},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="simNbr != null">
+        #{simNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="installDate != null">
+        #{installDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="installBy != null">
+        #{installBy,jdbcType=VARCHAR},
+      </if>
+      <if test="mountingFacilityType != null">
+        #{mountingFacilityType,jdbcType=CHAR},
+      </if>
+      <if test="enableUpdateDate != null">
+        #{enableUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="useStatusFlag != null">
+        #{useStatusFlag,jdbcType=CHAR},
+      </if>
+      <if test="longitude != null">
+        #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null">
+        #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="statusType != null">
+        #{statusType,jdbcType=VARCHAR},
+      </if>
+      <if test="statusUpdateTime != null">
+        #{statusUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncStatus != null">
+        #{syncStatus,jdbcType=CHAR},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="powerType != null">
+        #{powerType,jdbcType=CHAR},
+      </if>
+      <if test="transmissionMode != null">
+        #{transmissionMode,jdbcType=CHAR},
+      </if>
+      <if test="bandwidth != null">
+        #{bandwidth,jdbcType=VARCHAR},
+      </if>
+      <if test="ownership != null">
+        #{ownership,jdbcType=CHAR},
+      </if>
+      <if test="siteId != null">
+        #{siteId,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionIdList != null">
+        #{sectionIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionType != null">
+        #{collectionType,jdbcType=CHAR},
+      </if>
+      <if test="orgPrivilegeCode != null">
+        #{orgPrivilegeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contractorId != null">
+        #{contractorId,jdbcType=VARCHAR},
+      </if>
+      <if test="architecture != null">
+        #{architecture,jdbcType=CHAR},
+      </if>
+      <if test="serverPlatId != null">
+        #{serverPlatId,jdbcType=VARCHAR},
+      </if>
+      <if test="verificationMark != null">
+        #{verificationMark,jdbcType=VARCHAR},
+      </if>
+      <if test="lineStatisticsMark != null">
+        #{lineStatisticsMark,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceKey != null">
+        #{deviceKey,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceStopEndTime != null">
+        #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncMarkup != null">
+        #{syncMarkup,jdbcType=CHAR},
+      </if>
+      <if test="infoCheck != null">
+        #{infoCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="infoCheckDesc != null">
+        #{infoCheckDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="netContractor != null">
+        #{netContractor,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraId != null">
+        #{itms2CameraId,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2DeviceId != null">
+        #{itms2DeviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="powerOffNetwork != null">
+        #{powerOffNetwork,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraSn != null">
+        #{itms2CameraSn,jdbcType=VARCHAR},
+      </if>
+      <if test="toTable != null">
+        #{toTable,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2Isgun != null">
+        #{itms2Isgun,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="yushiSn != null">
+        #{yushiSn,jdbcType=VARCHAR},
+      </if>
+      <if test="sStatusTime != null">
+        #{sStatusTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sFaultDetails != null">
+        #{sFaultDetails,jdbcType=VARCHAR},
+      </if>
+      <if test="sComponentStatusResults != null">
+        #{sComponentStatusResults,jdbcType=VARCHAR},
+      </if>
+      <if test="sDeviceCurTime != null">
+        #{sDeviceCurTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sTimeDiff != null">
+        #{sTimeDiff,jdbcType=DECIMAL},
+      </if>
+      <if test="sLastUploadTime != null">
+        #{sLastUploadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sLatestDataTime != null">
+        #{sLatestDataTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sMapFaultCode != null">
+        #{sMapFaultCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sMapDataRecvTime != null">
+        #{sMapDataRecvTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    update T_DEVICE_SYS
+    <set>
+      <if test="deviceSysModelId != null">
+        DEVICE_SYS_MODEL_ID = #{deviceSysModelId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceSysNbr != null">
+        DEVICE_SYS_NBR = #{deviceSysNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceName != null">
+        DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null">
+        ORG_ID = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceType != null">
+        DEVICE_TYPE = #{deviceType,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceBrand != null">
+        DEVICE_BRAND = #{deviceBrand,jdbcType=VARCHAR},
+      </if>
+      <if test="manufactureSn != null">
+        MANUFACTURE_SN = #{manufactureSn,jdbcType=VARCHAR},
+      </if>
+      <if test="softwareVersion != null">
+        SOFTWARE_VERSION = #{softwareVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="networkType != null">
+        NETWORK_TYPE = #{networkType,jdbcType=CHAR},
+      </if>
+      <if test="safeConnectMeans != null">
+        SAFE_CONNECT_MEANS = #{safeConnectMeans,jdbcType=CHAR},
+      </if>
+      <if test="deviceIp != null">
+        DEVICE_IP = #{deviceIp,jdbcType=VARCHAR},
+      </if>
+      <if test="devicePort != null">
+        DEVICE_PORT = #{devicePort,jdbcType=DECIMAL},
+      </if>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="simNbr != null">
+        SIM_NBR = #{simNbr,jdbcType=VARCHAR},
+      </if>
+      <if test="installDate != null">
+        INSTALL_DATE = #{installDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="installBy != null">
+        INSTALL_BY = #{installBy,jdbcType=VARCHAR},
+      </if>
+      <if test="mountingFacilityType != null">
+        MOUNTING_FACILITY_TYPE = #{mountingFacilityType,jdbcType=CHAR},
+      </if>
+      <if test="enableUpdateDate != null">
+        ENABLE_UPDATE_DATE = #{enableUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="useStatusFlag != null">
+        USE_STATUS_FLAG = #{useStatusFlag,jdbcType=CHAR},
+      </if>
+      <if test="longitude != null">
+        LONGITUDE = #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null">
+        LATITUDE = #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="statusType != null">
+        STATUS_TYPE = #{statusType,jdbcType=VARCHAR},
+      </if>
+      <if test="statusUpdateTime != null">
+        STATUS_UPDATE_TIME = #{statusUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncStatus != null">
+        SYNC_STATUS = #{syncStatus,jdbcType=CHAR},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null">
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="powerType != null">
+        POWER_TYPE = #{powerType,jdbcType=CHAR},
+      </if>
+      <if test="transmissionMode != null">
+        TRANSMISSION_MODE = #{transmissionMode,jdbcType=CHAR},
+      </if>
+      <if test="bandwidth != null">
+        BANDWIDTH = #{bandwidth,jdbcType=VARCHAR},
+      </if>
+      <if test="ownership != null">
+        OWNERSHIP = #{ownership,jdbcType=CHAR},
+      </if>
+      <if test="siteId != null">
+        SITE_ID = #{siteId,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionIdList != null">
+        SECTION_ID_LIST = #{sectionIdList,jdbcType=VARCHAR},
+      </if>
+      <if test="collectionType != null">
+        COLLECTION_TYPE = #{collectionType,jdbcType=CHAR},
+      </if>
+      <if test="orgPrivilegeCode != null">
+        ORG_PRIVILEGE_CODE = #{orgPrivilegeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="contractorId != null">
+        CONTRACTOR_ID = #{contractorId,jdbcType=VARCHAR},
+      </if>
+      <if test="architecture != null">
+        ARCHITECTURE = #{architecture,jdbcType=CHAR},
+      </if>
+      <if test="serverPlatId != null">
+        SERVER_PLAT_ID = #{serverPlatId,jdbcType=VARCHAR},
+      </if>
+      <if test="verificationMark != null">
+        VERIFICATION_MARK = #{verificationMark,jdbcType=VARCHAR},
+      </if>
+      <if test="lineStatisticsMark != null">
+        LINE_STATISTICS_MARK = #{lineStatisticsMark,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceKey != null">
+        DEVICE_KEY = #{deviceKey,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceStopEndTime != null">
+        DEVICE_STOP_END_TIME = #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncMarkup != null">
+        SYNC_MARKUP = #{syncMarkup,jdbcType=CHAR},
+      </if>
+      <if test="infoCheck != null">
+        INFO_CHECK = #{infoCheck,jdbcType=VARCHAR},
+      </if>
+      <if test="infoCheckDesc != null">
+        INFO_CHECK_DESC = #{infoCheckDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="netContractor != null">
+        NET_CONTRACTOR = #{netContractor,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraId != null">
+        ITMS2_CAMERA_ID = #{itms2CameraId,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2DeviceId != null">
+        ITMS2_DEVICE_ID = #{itms2DeviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="powerOffNetwork != null">
+        POWER_OFF_NETWORK = #{powerOffNetwork,jdbcType=CHAR},
+      </if>
+      <if test="itms2CameraSn != null">
+        ITMS2_CAMERA_SN = #{itms2CameraSn,jdbcType=VARCHAR},
+      </if>
+      <if test="toTable != null">
+        TO_TABLE = #{toTable,jdbcType=VARCHAR},
+      </if>
+      <if test="itms2Isgun != null">
+        ITMS2_ISGUN = #{itms2Isgun,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        POSITION = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="yushiSn != null">
+        YUSHI_SN = #{yushiSn,jdbcType=VARCHAR},
+      </if>
+      <if test="sStatusTime != null">
+        S_STATUS_TIME = #{sStatusTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sFaultDetails != null">
+        S_FAULT_DETAILS = #{sFaultDetails,jdbcType=VARCHAR},
+      </if>
+      <if test="sComponentStatusResults != null">
+        S_COMPONENT_STATUS_RESULTS = #{sComponentStatusResults,jdbcType=VARCHAR},
+      </if>
+      <if test="sDeviceCurTime != null">
+        S_DEVICE_CUR_TIME = #{sDeviceCurTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sTimeDiff != null">
+        S_TIME_DIFF = #{sTimeDiff,jdbcType=DECIMAL},
+      </if>
+      <if test="sLastUploadTime != null">
+        S_LAST_UPLOAD_TIME = #{sLastUploadTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sLatestDataTime != null">
+        S_LATEST_DATA_TIME = #{sLatestDataTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sMapFaultCode != null">
+        S_MAP_FAULT_CODE = #{sMapFaultCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sMapDataRecvTime != null">
+        S_MAP_DATA_RECV_TIME = #{sMapDataRecvTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cy.its.trafficSituation.domain.models.DeviceSys">
+    update T_DEVICE_SYS
+    set DEVICE_SYS_MODEL_ID = #{deviceSysModelId,jdbcType=VARCHAR},
+      CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      DEVICE_SYS_NBR = #{deviceSysNbr,jdbcType=VARCHAR},
+      DEVICE_NAME = #{deviceName,jdbcType=VARCHAR},
+      ORG_ID = #{orgId,jdbcType=VARCHAR},
+      DEVICE_TYPE = #{deviceType,jdbcType=VARCHAR},
+      DEVICE_BRAND = #{deviceBrand,jdbcType=VARCHAR},
+      MANUFACTURE_SN = #{manufactureSn,jdbcType=VARCHAR},
+      SOFTWARE_VERSION = #{softwareVersion,jdbcType=VARCHAR},
+      NETWORK_TYPE = #{networkType,jdbcType=CHAR},
+      SAFE_CONNECT_MEANS = #{safeConnectMeans,jdbcType=CHAR},
+      DEVICE_IP = #{deviceIp,jdbcType=VARCHAR},
+      DEVICE_PORT = #{devicePort,jdbcType=DECIMAL},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      SIM_NBR = #{simNbr,jdbcType=VARCHAR},
+      INSTALL_DATE = #{installDate,jdbcType=TIMESTAMP},
+      INSTALL_BY = #{installBy,jdbcType=VARCHAR},
+      MOUNTING_FACILITY_TYPE = #{mountingFacilityType,jdbcType=CHAR},
+      ENABLE_UPDATE_DATE = #{enableUpdateDate,jdbcType=TIMESTAMP},
+      USE_STATUS_FLAG = #{useStatusFlag,jdbcType=CHAR},
+      LONGITUDE = #{longitude,jdbcType=DECIMAL},
+      LATITUDE = #{latitude,jdbcType=DECIMAL},
+      STATUS_TYPE = #{statusType,jdbcType=VARCHAR},
+      STATUS_UPDATE_TIME = #{statusUpdateTime,jdbcType=TIMESTAMP},
+      SYNC_STATUS = #{syncStatus,jdbcType=CHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      POWER_TYPE = #{powerType,jdbcType=CHAR},
+      TRANSMISSION_MODE = #{transmissionMode,jdbcType=CHAR},
+      BANDWIDTH = #{bandwidth,jdbcType=VARCHAR},
+      OWNERSHIP = #{ownership,jdbcType=CHAR},
+      SITE_ID = #{siteId,jdbcType=VARCHAR},
+      SECTION_ID_LIST = #{sectionIdList,jdbcType=VARCHAR},
+      COLLECTION_TYPE = #{collectionType,jdbcType=CHAR},
+      ORG_PRIVILEGE_CODE = #{orgPrivilegeCode,jdbcType=VARCHAR},
+      CONTRACTOR_ID = #{contractorId,jdbcType=VARCHAR},
+      ARCHITECTURE = #{architecture,jdbcType=CHAR},
+      SERVER_PLAT_ID = #{serverPlatId,jdbcType=VARCHAR},
+      VERIFICATION_MARK = #{verificationMark,jdbcType=VARCHAR},
+      LINE_STATISTICS_MARK = #{lineStatisticsMark,jdbcType=VARCHAR},
+      DEVICE_KEY = #{deviceKey,jdbcType=VARCHAR},
+      DEVICE_STOP_END_TIME = #{deviceStopEndTime,jdbcType=TIMESTAMP},
+      SYNC_MARKUP = #{syncMarkup,jdbcType=CHAR},
+      INFO_CHECK = #{infoCheck,jdbcType=VARCHAR},
+      INFO_CHECK_DESC = #{infoCheckDesc,jdbcType=VARCHAR},
+      NET_CONTRACTOR = #{netContractor,jdbcType=CHAR},
+      ITMS2_CAMERA_ID = #{itms2CameraId,jdbcType=VARCHAR},
+      ITMS2_DEVICE_ID = #{itms2DeviceId,jdbcType=VARCHAR},
+      POWER_OFF_NETWORK = #{powerOffNetwork,jdbcType=CHAR},
+      ITMS2_CAMERA_SN = #{itms2CameraSn,jdbcType=VARCHAR},
+      TO_TABLE = #{toTable,jdbcType=VARCHAR},
+      ITMS2_ISGUN = #{itms2Isgun,jdbcType=VARCHAR},
+      POSITION = #{position,jdbcType=VARCHAR},
+      YUSHI_SN = #{yushiSn,jdbcType=VARCHAR},
+      S_STATUS_TIME = #{sStatusTime,jdbcType=TIMESTAMP},
+      S_FAULT_DETAILS = #{sFaultDetails,jdbcType=VARCHAR},
+      S_COMPONENT_STATUS_RESULTS = #{sComponentStatusResults,jdbcType=VARCHAR},
+      S_DEVICE_CUR_TIME = #{sDeviceCurTime,jdbcType=TIMESTAMP},
+      S_TIME_DIFF = #{sTimeDiff,jdbcType=DECIMAL},
+      S_LAST_UPLOAD_TIME = #{sLastUploadTime,jdbcType=TIMESTAMP},
+      S_LATEST_DATA_TIME = #{sLatestDataTime,jdbcType=TIMESTAMP},
+      S_MAP_FAULT_CODE = #{sMapFaultCode,jdbcType=VARCHAR},
+      S_MAP_DATA_RECV_TIME = #{sMapDataRecvTime,jdbcType=VARCHAR}
+    where DEVICE_ID = #{deviceId,jdbcType=VARCHAR}
+  </update>
+</mapper>

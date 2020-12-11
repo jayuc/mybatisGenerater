@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cy.its.dispath.mybatis.client.Rescue.DispatchRescueResourceMapper" >
+  <resultMap id="BaseResultMap" type="cy.its.dispath.domain.model.rescue.DispatchRescueResource" >
+    <id column="RESOURCE_ID" property="resourceId" jdbcType="VARCHAR" />
+    <result column="RESOURCE_TYPE" property="resourceType" jdbcType="VARCHAR" />
+    <result column="RESOURCE_ORG_NAME" property="resourceOrgName" jdbcType="VARCHAR" />
+    <result column="ALARM_TEL" property="alarmTel" jdbcType="VARCHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="POST" property="post" jdbcType="VARCHAR" />
+    <result column="PERSON_TEL" property="personTel" jdbcType="VARCHAR" />
+    <result column="LON_LAT" property="lonLat" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="AMBULANCE_INFO" property="ambulanceInfo" jdbcType="VARCHAR" />
+    <result column="SMALL_CRANE_NUM" property="smallCraneNum" jdbcType="DECIMAL" />
+    <result column="MEDIUM_CRANE_NUM" property="mediumCraneNum" jdbcType="DECIMAL" />
+    <result column="LARGE_CRANE_NUM" property="largeCraneNum" jdbcType="DECIMAL" />
+    <result column="MATERIAL_RESERVES" property="materialReserves" jdbcType="VARCHAR" />
+    <result column="FIRE_TRUCK_INFO" property="fireTruckInfo" jdbcType="VARCHAR" />
+    <result column="RESCUE_HELICOPTER" property="rescueHelicopter" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="DISTRICT" property="district" jdbcType="VARCHAR" />
+    <result column="CREATE_BY" property="createBy" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="VARCHAR" />
+    <result column="UPDATE_TIME" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    RESOURCE_ID, RESOURCE_TYPE, RESOURCE_ORG_NAME, ALARM_TEL, NAME, POST, PERSON_TEL, 
+    LON_LAT, ADDRESS, AMBULANCE_INFO, SMALL_CRANE_NUM, MEDIUM_CRANE_NUM, LARGE_CRANE_NUM, 
+    MATERIAL_RESERVES, FIRE_TRUCK_INFO, RESCUE_HELICOPTER, REMARK, DISTRICT, CREATE_BY, 
+    CREATE_TIME, UPDATE_BY, UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_DISPATCH_RESCUE_RESOURCE
+    where RESOURCE_ID = #{resourceId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from T_DISPATCH_RESCUE_RESOURCE
+    where RESOURCE_ID = #{resourceId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cy.its.dispath.domain.model.rescue.DispatchRescueResource" >
+    insert into T_DISPATCH_RESCUE_RESOURCE (RESOURCE_ID, RESOURCE_TYPE, RESOURCE_ORG_NAME, 
+      ALARM_TEL, NAME, POST, 
+      PERSON_TEL, LON_LAT, ADDRESS, 
+      AMBULANCE_INFO, SMALL_CRANE_NUM, MEDIUM_CRANE_NUM, 
+      LARGE_CRANE_NUM, MATERIAL_RESERVES, FIRE_TRUCK_INFO, 
+      RESCUE_HELICOPTER, REMARK, DISTRICT, 
+      CREATE_BY, CREATE_TIME, UPDATE_BY, 
+      UPDATE_TIME)
+    values (#{resourceId,jdbcType=VARCHAR}, #{resourceType,jdbcType=VARCHAR}, #{resourceOrgName,jdbcType=VARCHAR}, 
+      #{alarmTel,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{post,jdbcType=VARCHAR}, 
+      #{personTel,jdbcType=VARCHAR}, #{lonLat,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{ambulanceInfo,jdbcType=VARCHAR}, #{smallCraneNum,jdbcType=DECIMAL}, #{mediumCraneNum,jdbcType=DECIMAL}, 
+      #{largeCraneNum,jdbcType=DECIMAL}, #{materialReserves,jdbcType=VARCHAR}, #{fireTruckInfo,jdbcType=VARCHAR}, 
+      #{rescueHelicopter,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{district,jdbcType=VARCHAR}, 
+      #{createBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cy.its.dispath.domain.model.rescue.DispatchRescueResource" >
+    insert into T_DISPATCH_RESCUE_RESOURCE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="resourceId != null" >
+        RESOURCE_ID,
+      </if>
+      <if test="resourceType != null" >
+        RESOURCE_TYPE,
+      </if>
+      <if test="resourceOrgName != null" >
+        RESOURCE_ORG_NAME,
+      </if>
+      <if test="alarmTel != null" >
+        ALARM_TEL,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="post != null" >
+        POST,
+      </if>
+      <if test="personTel != null" >
+        PERSON_TEL,
+      </if>
+      <if test="lonLat != null" >
+        LON_LAT,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="ambulanceInfo != null" >
+        AMBULANCE_INFO,
+      </if>
+      <if test="smallCraneNum != null" >
+        SMALL_CRANE_NUM,
+      </if>
+      <if test="mediumCraneNum != null" >
+        MEDIUM_CRANE_NUM,
+      </if>
+      <if test="largeCraneNum != null" >
+        LARGE_CRANE_NUM,
+      </if>
+      <if test="materialReserves != null" >
+        MATERIAL_RESERVES,
+      </if>
+      <if test="fireTruckInfo != null" >
+        FIRE_TRUCK_INFO,
+      </if>
+      <if test="rescueHelicopter != null" >
+        RESCUE_HELICOPTER,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="district != null" >
+        DISTRICT,
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="resourceId != null" >
+        #{resourceId,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceType != null" >
+        #{resourceType,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceOrgName != null" >
+        #{resourceOrgName,jdbcType=VARCHAR},
+      </if>
+      <if test="alarmTel != null" >
+        #{alarmTel,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="post != null" >
+        #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="personTel != null" >
+        #{personTel,jdbcType=VARCHAR},
+      </if>
+      <if test="lonLat != null" >
+        #{lonLat,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="ambulanceInfo != null" >
+        #{ambulanceInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="smallCraneNum != null" >
+        #{smallCraneNum,jdbcType=DECIMAL},
+      </if>
+      <if test="mediumCraneNum != null" >
+        #{mediumCraneNum,jdbcType=DECIMAL},
+      </if>
+      <if test="largeCraneNum != null" >
+        #{largeCraneNum,jdbcType=DECIMAL},
+      </if>
+      <if test="materialReserves != null" >
+        #{materialReserves,jdbcType=VARCHAR},
+      </if>
+      <if test="fireTruckInfo != null" >
+        #{fireTruckInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="rescueHelicopter != null" >
+        #{rescueHelicopter,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="district != null" >
+        #{district,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cy.its.dispath.domain.model.rescue.DispatchRescueResource" >
+    update T_DISPATCH_RESCUE_RESOURCE
+    <set >
+      <if test="resourceType != null" >
+        RESOURCE_TYPE = #{resourceType,jdbcType=VARCHAR},
+      </if>
+      <if test="resourceOrgName != null" >
+        RESOURCE_ORG_NAME = #{resourceOrgName,jdbcType=VARCHAR},
+      </if>
+      <if test="alarmTel != null" >
+        ALARM_TEL = #{alarmTel,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="post != null" >
+        POST = #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="personTel != null" >
+        PERSON_TEL = #{personTel,jdbcType=VARCHAR},
+      </if>
+      <if test="lonLat != null" >
+        LON_LAT = #{lonLat,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="ambulanceInfo != null" >
+        AMBULANCE_INFO = #{ambulanceInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="smallCraneNum != null" >
+        SMALL_CRANE_NUM = #{smallCraneNum,jdbcType=DECIMAL},
+      </if>
+      <if test="mediumCraneNum != null" >
+        MEDIUM_CRANE_NUM = #{mediumCraneNum,jdbcType=DECIMAL},
+      </if>
+      <if test="largeCraneNum != null" >
+        LARGE_CRANE_NUM = #{largeCraneNum,jdbcType=DECIMAL},
+      </if>
+      <if test="materialReserves != null" >
+        MATERIAL_RESERVES = #{materialReserves,jdbcType=VARCHAR},
+      </if>
+      <if test="fireTruckInfo != null" >
+        FIRE_TRUCK_INFO = #{fireTruckInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="rescueHelicopter != null" >
+        RESCUE_HELICOPTER = #{rescueHelicopter,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="district != null" >
+        DISTRICT = #{district,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where RESOURCE_ID = #{resourceId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cy.its.dispath.domain.model.rescue.DispatchRescueResource" >
+    update T_DISPATCH_RESCUE_RESOURCE
+    set RESOURCE_TYPE = #{resourceType,jdbcType=VARCHAR},
+      RESOURCE_ORG_NAME = #{resourceOrgName,jdbcType=VARCHAR},
+      ALARM_TEL = #{alarmTel,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      POST = #{post,jdbcType=VARCHAR},
+      PERSON_TEL = #{personTel,jdbcType=VARCHAR},
+      LON_LAT = #{lonLat,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      AMBULANCE_INFO = #{ambulanceInfo,jdbcType=VARCHAR},
+      SMALL_CRANE_NUM = #{smallCraneNum,jdbcType=DECIMAL},
+      MEDIUM_CRANE_NUM = #{mediumCraneNum,jdbcType=DECIMAL},
+      LARGE_CRANE_NUM = #{largeCraneNum,jdbcType=DECIMAL},
+      MATERIAL_RESERVES = #{materialReserves,jdbcType=VARCHAR},
+      FIRE_TRUCK_INFO = #{fireTruckInfo,jdbcType=VARCHAR},
+      RESCUE_HELICOPTER = #{rescueHelicopter,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      DISTRICT = #{district,jdbcType=VARCHAR},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_BY = #{updateBy,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+    where RESOURCE_ID = #{resourceId,jdbcType=VARCHAR}
+  </update>
+</mapper>

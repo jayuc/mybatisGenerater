@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="top.jayu.oa.mapper.OaBillMapper" >
+  <resultMap id="BaseResultMap" type="top.jayu.oa.entity.OaBill" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="TINYINT" />
+    <result column="current_step" property="currentStep" jdbcType="VARCHAR" />
+    <result column="stop_flag" property="stopFlag" jdbcType="TINYINT" />
+    <result column="employ_id" property="employId" jdbcType="INTEGER" />
+    <result column="next_employ_id" property="nextEmployId" jdbcType="INTEGER" />
+    <result column="next_org_id" property="nextOrgId" jdbcType="INTEGER" />
+    <result column="org_id" property="orgId" jdbcType="INTEGER" />
+    <result column="org_oa_type" property="orgOaType" jdbcType="TINYINT" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="work_age" property="workAge" jdbcType="TINYINT" />
+    <result column="days" property="days" jdbcType="SMALLINT" />
+    <result column="people_number" property="peopleNumber" jdbcType="SMALLINT" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="travel_tool" property="travelTool" jdbcType="TINYINT" />
+    <result column="amount" property="amount" jdbcType="INTEGER" />
+    <result column="file_url1" property="fileUrl1" jdbcType="VARCHAR" />
+    <result column="file_url2" property="fileUrl2" jdbcType="VARCHAR" />
+    <result column="file_url3" property="fileUrl3" jdbcType="VARCHAR" />
+    <result column="extend_content" property="extendContent" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="mark" property="mark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, code, type, current_step, stop_flag, employ_id, next_employ_id, next_org_id, 
+    org_id, org_oa_type, start_time, end_time, work_age, days, people_number, content, 
+    address, travel_tool, amount, file_url1, file_url2, file_url3, extend_content, create_time, 
+    update_time, mark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_oa_bill
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_oa_bill
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="top.jayu.oa.entity.OaBill" >
+    insert into t_oa_bill (id, code, type, 
+      current_step, stop_flag, employ_id, 
+      next_employ_id, next_org_id, org_id, 
+      org_oa_type, start_time, end_time, 
+      work_age, days, people_number, 
+      content, address, travel_tool, 
+      amount, file_url1, file_url2, 
+      file_url3, extend_content, create_time, 
+      update_time, mark)
+    values (#{id,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, 
+      #{currentStep,jdbcType=VARCHAR}, #{stopFlag,jdbcType=TINYINT}, #{employId,jdbcType=INTEGER}, 
+      #{nextEmployId,jdbcType=INTEGER}, #{nextOrgId,jdbcType=INTEGER}, #{orgId,jdbcType=INTEGER}, 
+      #{orgOaType,jdbcType=TINYINT}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{workAge,jdbcType=TINYINT}, #{days,jdbcType=SMALLINT}, #{peopleNumber,jdbcType=SMALLINT}, 
+      #{content,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{travelTool,jdbcType=TINYINT}, 
+      #{amount,jdbcType=INTEGER}, #{fileUrl1,jdbcType=VARCHAR}, #{fileUrl2,jdbcType=VARCHAR}, 
+      #{fileUrl3,jdbcType=VARCHAR}, #{extendContent,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{mark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="top.jayu.oa.entity.OaBill" >
+    insert into t_oa_bill
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="currentStep != null" >
+        current_step,
+      </if>
+      <if test="stopFlag != null" >
+        stop_flag,
+      </if>
+      <if test="employId != null" >
+        employ_id,
+      </if>
+      <if test="nextEmployId != null" >
+        next_employ_id,
+      </if>
+      <if test="nextOrgId != null" >
+        next_org_id,
+      </if>
+      <if test="orgId != null" >
+        org_id,
+      </if>
+      <if test="orgOaType != null" >
+        org_oa_type,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+      <if test="workAge != null" >
+        work_age,
+      </if>
+      <if test="days != null" >
+        days,
+      </if>
+      <if test="peopleNumber != null" >
+        people_number,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="travelTool != null" >
+        travel_tool,
+      </if>
+      <if test="amount != null" >
+        amount,
+      </if>
+      <if test="fileUrl1 != null" >
+        file_url1,
+      </if>
+      <if test="fileUrl2 != null" >
+        file_url2,
+      </if>
+      <if test="fileUrl3 != null" >
+        file_url3,
+      </if>
+      <if test="extendContent != null" >
+        extend_content,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="mark != null" >
+        mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="currentStep != null" >
+        #{currentStep,jdbcType=VARCHAR},
+      </if>
+      <if test="stopFlag != null" >
+        #{stopFlag,jdbcType=TINYINT},
+      </if>
+      <if test="employId != null" >
+        #{employId,jdbcType=INTEGER},
+      </if>
+      <if test="nextEmployId != null" >
+        #{nextEmployId,jdbcType=INTEGER},
+      </if>
+      <if test="nextOrgId != null" >
+        #{nextOrgId,jdbcType=INTEGER},
+      </if>
+      <if test="orgId != null" >
+        #{orgId,jdbcType=INTEGER},
+      </if>
+      <if test="orgOaType != null" >
+        #{orgOaType,jdbcType=TINYINT},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="workAge != null" >
+        #{workAge,jdbcType=TINYINT},
+      </if>
+      <if test="days != null" >
+        #{days,jdbcType=SMALLINT},
+      </if>
+      <if test="peopleNumber != null" >
+        #{peopleNumber,jdbcType=SMALLINT},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="travelTool != null" >
+        #{travelTool,jdbcType=TINYINT},
+      </if>
+      <if test="amount != null" >
+        #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="fileUrl1 != null" >
+        #{fileUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="fileUrl2 != null" >
+        #{fileUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="fileUrl3 != null" >
+        #{fileUrl3,jdbcType=VARCHAR},
+      </if>
+      <if test="extendContent != null" >
+        #{extendContent,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mark != null" >
+        #{mark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="top.jayu.oa.entity.OaBill" >
+    update t_oa_bill
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="currentStep != null" >
+        current_step = #{currentStep,jdbcType=VARCHAR},
+      </if>
+      <if test="stopFlag != null" >
+        stop_flag = #{stopFlag,jdbcType=TINYINT},
+      </if>
+      <if test="employId != null" >
+        employ_id = #{employId,jdbcType=INTEGER},
+      </if>
+      <if test="nextEmployId != null" >
+        next_employ_id = #{nextEmployId,jdbcType=INTEGER},
+      </if>
+      <if test="nextOrgId != null" >
+        next_org_id = #{nextOrgId,jdbcType=INTEGER},
+      </if>
+      <if test="orgId != null" >
+        org_id = #{orgId,jdbcType=INTEGER},
+      </if>
+      <if test="orgOaType != null" >
+        org_oa_type = #{orgOaType,jdbcType=TINYINT},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="workAge != null" >
+        work_age = #{workAge,jdbcType=TINYINT},
+      </if>
+      <if test="days != null" >
+        days = #{days,jdbcType=SMALLINT},
+      </if>
+      <if test="peopleNumber != null" >
+        people_number = #{peopleNumber,jdbcType=SMALLINT},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="travelTool != null" >
+        travel_tool = #{travelTool,jdbcType=TINYINT},
+      </if>
+      <if test="amount != null" >
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
+      <if test="fileUrl1 != null" >
+        file_url1 = #{fileUrl1,jdbcType=VARCHAR},
+      </if>
+      <if test="fileUrl2 != null" >
+        file_url2 = #{fileUrl2,jdbcType=VARCHAR},
+      </if>
+      <if test="fileUrl3 != null" >
+        file_url3 = #{fileUrl3,jdbcType=VARCHAR},
+      </if>
+      <if test="extendContent != null" >
+        extend_content = #{extendContent,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mark != null" >
+        mark = #{mark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="top.jayu.oa.entity.OaBill" >
+    update t_oa_bill
+    set code = #{code,jdbcType=VARCHAR},
+      type = #{type,jdbcType=TINYINT},
+      current_step = #{currentStep,jdbcType=VARCHAR},
+      stop_flag = #{stopFlag,jdbcType=TINYINT},
+      employ_id = #{employId,jdbcType=INTEGER},
+      next_employ_id = #{nextEmployId,jdbcType=INTEGER},
+      next_org_id = #{nextOrgId,jdbcType=INTEGER},
+      org_id = #{orgId,jdbcType=INTEGER},
+      org_oa_type = #{orgOaType,jdbcType=TINYINT},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      work_age = #{workAge,jdbcType=TINYINT},
+      days = #{days,jdbcType=SMALLINT},
+      people_number = #{peopleNumber,jdbcType=SMALLINT},
+      content = #{content,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      travel_tool = #{travelTool,jdbcType=TINYINT},
+      amount = #{amount,jdbcType=INTEGER},
+      file_url1 = #{fileUrl1,jdbcType=VARCHAR},
+      file_url2 = #{fileUrl2,jdbcType=VARCHAR},
+      file_url3 = #{fileUrl3,jdbcType=VARCHAR},
+      extend_content = #{extendContent,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      mark = #{mark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

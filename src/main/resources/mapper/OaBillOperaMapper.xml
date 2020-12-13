@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="top.jayu.oa.mapper.OaBillOperaMapper" >
+  <resultMap id="BaseResultMap" type="top.jayu.oa.entity.OaBillOpera" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="bill_id" property="billId" jdbcType="INTEGER" />
+    <result column="step" property="step" jdbcType="VARCHAR" />
+    <result column="approve_employ_id" property="approveEmployId" jdbcType="INTEGER" />
+    <result column="approve_org_id" property="approveOrgId" jdbcType="INTEGER" />
+    <result column="pass_flag" property="passFlag" jdbcType="TINYINT" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, bill_id, step, approve_employ_id, approve_org_id, pass_flag, content, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_oa_bill_opera
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_oa_bill_opera
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="top.jayu.oa.entity.OaBillOpera" >
+    insert into t_oa_bill_opera (id, bill_id, step, 
+      approve_employ_id, approve_org_id, pass_flag, 
+      content, create_time)
+    values (#{id,jdbcType=INTEGER}, #{billId,jdbcType=INTEGER}, #{step,jdbcType=VARCHAR}, 
+      #{approveEmployId,jdbcType=INTEGER}, #{approveOrgId,jdbcType=INTEGER}, #{passFlag,jdbcType=TINYINT}, 
+      #{content,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="top.jayu.oa.entity.OaBillOpera" >
+    insert into t_oa_bill_opera
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="billId != null" >
+        bill_id,
+      </if>
+      <if test="step != null" >
+        step,
+      </if>
+      <if test="approveEmployId != null" >
+        approve_employ_id,
+      </if>
+      <if test="approveOrgId != null" >
+        approve_org_id,
+      </if>
+      <if test="passFlag != null" >
+        pass_flag,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="billId != null" >
+        #{billId,jdbcType=INTEGER},
+      </if>
+      <if test="step != null" >
+        #{step,jdbcType=VARCHAR},
+      </if>
+      <if test="approveEmployId != null" >
+        #{approveEmployId,jdbcType=INTEGER},
+      </if>
+      <if test="approveOrgId != null" >
+        #{approveOrgId,jdbcType=INTEGER},
+      </if>
+      <if test="passFlag != null" >
+        #{passFlag,jdbcType=TINYINT},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="top.jayu.oa.entity.OaBillOpera" >
+    update t_oa_bill_opera
+    <set >
+      <if test="billId != null" >
+        bill_id = #{billId,jdbcType=INTEGER},
+      </if>
+      <if test="step != null" >
+        step = #{step,jdbcType=VARCHAR},
+      </if>
+      <if test="approveEmployId != null" >
+        approve_employ_id = #{approveEmployId,jdbcType=INTEGER},
+      </if>
+      <if test="approveOrgId != null" >
+        approve_org_id = #{approveOrgId,jdbcType=INTEGER},
+      </if>
+      <if test="passFlag != null" >
+        pass_flag = #{passFlag,jdbcType=TINYINT},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="top.jayu.oa.entity.OaBillOpera" >
+    update t_oa_bill_opera
+    set bill_id = #{billId,jdbcType=INTEGER},
+      step = #{step,jdbcType=VARCHAR},
+      approve_employ_id = #{approveEmployId,jdbcType=INTEGER},
+      approve_org_id = #{approveOrgId,jdbcType=INTEGER},
+      pass_flag = #{passFlag,jdbcType=TINYINT},
+      content = #{content,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

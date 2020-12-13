@@ -6,14 +6,14 @@
     <!-- 数据库驱动:选择你的本地硬盘上面的数据库驱动包，路径不要出现中文-->
 
     <!-- mysql -->
-    <classPathEntry  location="F:\Repositories\Maven\mysql\mysql-connector-java\8.0.15\mysql-connector-java-8.0.15.jar"/>
+    <classPathEntry  location="E:\Repositories\Maven\mysql\mysql-connector-java\8.0.18\mysql-connector-java-8.0.18.jar"/>
 
     <context id="DB2Tables"  targetRuntime="MyBatis3">
 
         <!-- model 不生成 get set 方法的插件 -->
-        <plugin type="org.mybatis.generator.plugins.NoGetSetPlugin">
+        <!--<plugin type="org.mybatis.generator.plugins.NoGetSetPlugin">-->
 
-        </plugin>
+        <!--</plugin>-->
 
         <commentGenerator>
             <property name="suppressDate" value="true"/>
@@ -44,7 +44,7 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-        <table tableName="t_sys_user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="t_sys_employ" domainObjectName="Employ" enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 </generatorConfiguration>

@@ -1,19 +1,179 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="top.jayu.oa.mapper.EmployMapper" >
-  <resultMap id="BaseResultMap" type="top.jayu.oa.entity.Employ" >
-    <result column="id" property="id" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="login_name" property="loginName" jdbcType="VARCHAR" />
-    <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="position" property="position" jdbcType="VARCHAR" />
-    <result column="org_id" property="orgId" jdbcType="INTEGER" />
-    <result column="tel" property="tel" jdbcType="VARCHAR" />
-    <result column="mobile_tel" property="mobileTel" jdbcType="VARCHAR" />
-    <result column="age" property="age" jdbcType="INTEGER" />
-    <result column="address" property="address" jdbcType="VARCHAR" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.jayu.oa.mapper.EmployMapper">
+  <resultMap id="BaseResultMap" type="top.jayu.oa.entity.Employ">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="work_age" jdbcType="INTEGER" property="workAge" />
+    <result column="org_id" jdbcType="INTEGER" property="orgId" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="mobile_tel" jdbcType="VARCHAR" property="mobileTel" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
   </resultMap>
-  <insert id="insert" parameterType="top.jayu.oa.entity.Employ" >
+  <sql id="Base_Column_List">
+    id, name, login_name, password, position, work_age, org_id, tel, mobile_tel, age, 
+    address
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_sys_employ
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_sys_employ
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="top.jayu.oa.entity.Employ">
+    insert into t_sys_employ (id, name, login_name, 
+      password, position, work_age, 
+      org_id, tel, mobile_tel, 
+      age, address)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{loginName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{workAge,jdbcType=INTEGER}, 
+      #{orgId,jdbcType=INTEGER}, #{tel,jdbcType=VARCHAR}, #{mobileTel,jdbcType=VARCHAR}, 
+      #{age,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="top.jayu.oa.entity.Employ">
+    insert into t_sys_employ
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="loginName != null">
+        login_name,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="position != null">
+        position,
+      </if>
+      <if test="workAge != null">
+        work_age,
+      </if>
+      <if test="orgId != null">
+        org_id,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+      <if test="mobileTel != null">
+        mobile_tel,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="loginName != null">
+        #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="workAge != null">
+        #{workAge,jdbcType=INTEGER},
+      </if>
+      <if test="orgId != null">
+        #{orgId,jdbcType=INTEGER},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileTel != null">
+        #{mobileTel,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="top.jayu.oa.entity.Employ">
+    update t_sys_employ
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="loginName != null">
+        login_name = #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="position != null">
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="workAge != null">
+        work_age = #{workAge,jdbcType=INTEGER},
+      </if>
+      <if test="orgId != null">
+        org_id = #{orgId,jdbcType=INTEGER},
+      </if>
+      <if test="tel != null">
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileTel != null">
+        mobile_tel = #{mobileTel,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="top.jayu.oa.entity.Employ">
+    update t_sys_employ
+    set name = #{name,jdbcType=VARCHAR},
+      login_name = #{loginName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      position = #{position,jdbcType=VARCHAR},
+      work_age = #{workAge,jdbcType=INTEGER},
+      org_id = #{orgId,jdbcType=INTEGER},
+      tel = #{tel,jdbcType=VARCHAR},
+      mobile_tel = #{mobileTel,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="top.jayu.oa.entity.Employ">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="org_id" jdbcType="INTEGER" property="orgId" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="mobile_tel" jdbcType="VARCHAR" property="mobileTel" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+  </resultMap>
+  <insert id="insert" parameterType="top.jayu.oa.entity.Employ">
     insert into t_sys_employ (id, name, login_name, 
       password, position, org_id, 
       tel, mobile_tel, age, 
@@ -23,69 +183,69 @@
       #{tel,jdbcType=VARCHAR}, #{mobileTel,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
       #{address,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="top.jayu.oa.entity.Employ" >
+  <insert id="insertSelective" parameterType="top.jayu.oa.entity.Employ">
     insert into t_sys_employ
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         id,
       </if>
-      <if test="name != null" >
+      <if test="name != null">
         name,
       </if>
-      <if test="loginName != null" >
+      <if test="loginName != null">
         login_name,
       </if>
-      <if test="password != null" >
+      <if test="password != null">
         password,
       </if>
-      <if test="position != null" >
+      <if test="position != null">
         position,
       </if>
-      <if test="orgId != null" >
+      <if test="orgId != null">
         org_id,
       </if>
-      <if test="tel != null" >
+      <if test="tel != null">
         tel,
       </if>
-      <if test="mobileTel != null" >
+      <if test="mobileTel != null">
         mobile_tel,
       </if>
-      <if test="age != null" >
+      <if test="age != null">
         age,
       </if>
-      <if test="address != null" >
+      <if test="address != null">
         address,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="name != null" >
+      <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="loginName != null" >
+      <if test="loginName != null">
         #{loginName,jdbcType=VARCHAR},
       </if>
-      <if test="password != null" >
+      <if test="password != null">
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="position != null" >
+      <if test="position != null">
         #{position,jdbcType=VARCHAR},
       </if>
-      <if test="orgId != null" >
+      <if test="orgId != null">
         #{orgId,jdbcType=INTEGER},
       </if>
-      <if test="tel != null" >
+      <if test="tel != null">
         #{tel,jdbcType=VARCHAR},
       </if>
-      <if test="mobileTel != null" >
+      <if test="mobileTel != null">
         #{mobileTel,jdbcType=VARCHAR},
       </if>
-      <if test="age != null" >
+      <if test="age != null">
         #{age,jdbcType=INTEGER},
       </if>
-      <if test="address != null" >
+      <if test="address != null">
         #{address,jdbcType=VARCHAR},
       </if>
     </trim>
